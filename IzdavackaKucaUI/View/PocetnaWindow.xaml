@@ -1,0 +1,366 @@
+﻿<Window x:Class="IzdavackaKucaUI.View.PocetnaWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:IzdavackaKucaUI.View"
+        mc:Ignorable="d"
+               Title="MainWindow" Height="474" Width="652.11">
+    <Window.Background>
+        <ImageBrush ImageSource="../pozadina.jpg"/>
+    </Window.Background>
+    <Grid Margin="0,0,-0.4,1">
+
+        <Button Background="BurlyWood" FontSize="17" Foreground="#FFE82424" Content="Odeljenje" HorizontalAlignment="Left" Height="54" Margin="83,62,0,0" VerticalAlignment="Top" Width="122"   Command="{Binding OdeljenjeCommand}" FontWeight="Bold">
+            <Button.Template>
+                <ControlTemplate TargetType="Button">
+                    <Grid>
+                        <Ellipse Stroke="#FFE82424"
+                         StrokeThickness="2">
+                            <Ellipse.Fill>
+                                <RadialGradientBrush>
+                                    <GradientStop Offset="0"
+                                          Color="#FFEEAF66" />
+                                    <GradientStop Offset="1"
+                                          Color="#DEB887" />
+                                    <GradientStop Offset="1"
+                                          Color="#FFEEAF66" />
+                                    <RadialGradientBrush.Transform>
+                                        <TransformGroup>
+                                            <ScaleTransform ScaleY="0.65" />
+                                        </TransformGroup>
+                                    </RadialGradientBrush.Transform>
+                                </RadialGradientBrush>
+                            </Ellipse.Fill>
+                        </Ellipse>
+                        <ContentPresenter HorizontalAlignment="Center"
+                                  VerticalAlignment="Center"/>
+                    </Grid>
+                </ControlTemplate>
+            </Button.Template>
+        </Button>
+        <Button Background="BurlyWood" FontSize="15" Foreground="#FFE82424"  Content="Radnik" HorizontalAlignment="Left" Height="54" Margin="259,62,0,0" VerticalAlignment="Top" Width="122"  Command="{Binding RadnikCommand}" FontWeight="Bold">
+            <Button.Template>
+                <ControlTemplate TargetType="Button">
+                    <Grid>
+                        <Ellipse Stroke="#FFE82424"
+                         StrokeThickness="2">
+                            <Ellipse.Fill>
+                                <RadialGradientBrush>
+                                    <GradientStop Offset="0"
+                                          Color="#FFEEAF66" />
+                                    <GradientStop Offset="1"
+                                          Color="#DEB887" />
+                                    <GradientStop Offset="1"
+                                          Color="#FFEEAF66" />
+                                    <RadialGradientBrush.Transform>
+                                        <TransformGroup>
+                                            <ScaleTransform ScaleY="0.65" />
+                                        </TransformGroup>
+                                    </RadialGradientBrush.Transform>
+                                </RadialGradientBrush>
+                            </Ellipse.Fill>
+                        </Ellipse>
+                        <ContentPresenter HorizontalAlignment="Center"
+                                  VerticalAlignment="Center"/>
+                    </Grid>
+                </ControlTemplate>
+            </Button.Template>
+        </Button>
+        <Button Background="BurlyWood" FontSize="15" Foreground="#FFE82424"  Content="Knjižara" HorizontalAlignment="Left" Height="54" Margin="438,62,0,0" VerticalAlignment="Top" Width="129"  Command="{Binding KnjizaraCommand}" FontWeight="Bold">
+            <Button.Template>
+                <ControlTemplate TargetType="Button">
+                    <Grid>
+                        <Ellipse Stroke="#FFE82424"
+                         StrokeThickness="2">
+                            <Ellipse.Fill>
+                                <RadialGradientBrush>
+                                    <GradientStop Offset="0"
+                                          Color="#FFEEAF66" />
+                                    <GradientStop Offset="1"
+                                          Color="#DEB887" />
+                                    <GradientStop Offset="1"
+                                          Color="#FFEEAF66" />
+                                    <RadialGradientBrush.Transform>
+                                        <TransformGroup>
+                                            <ScaleTransform ScaleY="0.65" />
+                                        </TransformGroup>
+                                    </RadialGradientBrush.Transform>
+                                </RadialGradientBrush>
+                            </Ellipse.Fill>
+                        </Ellipse>
+                        <ContentPresenter HorizontalAlignment="Center"
+                                  VerticalAlignment="Center"/>
+                    </Grid>
+                </ControlTemplate>
+            </Button.Template>
+        </Button>
+        <Button Background="BurlyWood" FontSize="15" Foreground="#FFE82424"  Content="Nagrada" HorizontalAlignment="Left" Height="59" Margin="83,143,0,0" VerticalAlignment="Top" Width="122"  Command="{Binding NagradaCommand}" FontWeight="Bold">
+            <Button.Template>
+                <ControlTemplate TargetType="Button">
+                    <Grid>
+                        <Ellipse Stroke="#FFE82424"
+                         StrokeThickness="2">
+                            <Ellipse.Fill>
+                                <RadialGradientBrush>
+                                    <GradientStop Offset="0"
+                                          Color="#FFEEAF66" />
+                                    <GradientStop Offset="1"
+                                          Color="#DEB887" />
+                                    <GradientStop Offset="1"
+                                          Color="#FFEEAF66" />
+                                    <RadialGradientBrush.Transform>
+                                        <TransformGroup>
+                                            <ScaleTransform ScaleY="0.65" />
+                                        </TransformGroup>
+                                    </RadialGradientBrush.Transform>
+                                </RadialGradientBrush>
+                            </Ellipse.Fill>
+                        </Ellipse>
+                        <ContentPresenter HorizontalAlignment="Center"
+                                  VerticalAlignment="Center"/>
+                    </Grid>
+                </ControlTemplate>
+            </Button.Template>
+        </Button>
+        <Button Background="BurlyWood" FontSize="15" Foreground="#FFE82424"  Content="Knjiga" HorizontalAlignment="Left" Height="59" Margin="259,143,0,0" VerticalAlignment="Top" Width="122" Command="{Binding KnjigaCommand}" FontWeight="Bold">
+            <Button.Template>
+                <ControlTemplate TargetType="Button">
+                    <Grid>
+                        <Ellipse Stroke="#FFE82424"
+                         StrokeThickness="2">
+                            <Ellipse.Fill>
+                                <RadialGradientBrush>
+                                    <GradientStop Offset="0"
+                                          Color="#FFEEAF66" />
+                                    <GradientStop Offset="1"
+                                          Color="#DEB887" />
+                                    <GradientStop Offset="1"
+                                          Color="#FFEEAF66" />
+                                    <RadialGradientBrush.Transform>
+                                        <TransformGroup>
+                                            <ScaleTransform ScaleY="0.65" />
+                                        </TransformGroup>
+                                    </RadialGradientBrush.Transform>
+                                </RadialGradientBrush>
+                            </Ellipse.Fill>
+                        </Ellipse>
+                        <ContentPresenter HorizontalAlignment="Center"
+                                  VerticalAlignment="Center"/>
+                    </Grid>
+                </ControlTemplate>
+            </Button.Template>
+        </Button>
+        <Button Background="BurlyWood" FontSize="15" Foreground="#FFE82424"  Content="Dogadjaj" HorizontalAlignment="Left" Height="59" Margin="438,143,0,0" VerticalAlignment="Top" Width="129" Command="{Binding DogadjajCommand}" FontWeight="Bold">
+            <Button.Template>
+                <ControlTemplate TargetType="Button">
+                    <Grid>
+                        <Ellipse Stroke="#FFE82424"
+                         StrokeThickness="2">
+                            <Ellipse.Fill>
+                                <RadialGradientBrush>
+                                    <GradientStop Offset="0"
+                                          Color="#FFEEAF66" />
+                                    <GradientStop Offset="1"
+                                          Color="#DEB887" />
+                                    <GradientStop Offset="1"
+                                          Color="#FFEEAF66" />
+                                    <RadialGradientBrush.Transform>
+                                        <TransformGroup>
+                                            <ScaleTransform ScaleY="0.65" />
+                                        </TransformGroup>
+                                    </RadialGradientBrush.Transform>
+                                </RadialGradientBrush>
+                            </Ellipse.Fill>
+                        </Ellipse>
+                        <ContentPresenter HorizontalAlignment="Center"
+                                  VerticalAlignment="Center"/>
+                    </Grid>
+                </ControlTemplate>
+            </Button.Template>
+        </Button>
+        <Button Background="BurlyWood" FontSize="15" Foreground="#FFE82424"  Content="Recenzija" HorizontalAlignment="Left" Height="53" Margin="83,244,0,0" VerticalAlignment="Top" Width="122"  Command="{Binding RecenzijaCommand}" FontWeight="Bold">
+            <Button.Template>
+                <ControlTemplate TargetType="Button">
+                    <Grid>
+                        <Ellipse Stroke="#FFE82424"
+                         StrokeThickness="2">
+                            <Ellipse.Fill>
+                                <RadialGradientBrush>
+                                    <GradientStop Offset="0"
+                                          Color="#FFEEAF66" />
+                                    <GradientStop Offset="1"
+                                          Color="#DEB887" />
+                                    <GradientStop Offset="1"
+                                          Color="#FFEEAF66" />
+                                    <RadialGradientBrush.Transform>
+                                        <TransformGroup>
+                                            <ScaleTransform ScaleY="0.65" />
+                                        </TransformGroup>
+                                    </RadialGradientBrush.Transform>
+                                </RadialGradientBrush>
+                            </Ellipse.Fill>
+                        </Ellipse>
+                        <ContentPresenter HorizontalAlignment="Center"
+                                  VerticalAlignment="Center"/>
+                    </Grid>
+                </ControlTemplate>
+            </Button.Template>
+        </Button>
+        <Button Background="BurlyWood" FontSize="15" Foreground="#FFE82424"  Content="Pisac" HorizontalAlignment="Left" Height="53" Margin="259,244,0,0" VerticalAlignment="Top" Width="122"  Command="{Binding PisacCommand}" FontWeight="Bold">
+            <Button.Template>
+                <ControlTemplate TargetType="Button">
+                    <Grid>
+                        <Ellipse Stroke="#FFE82424"
+                         StrokeThickness="2">
+                            <Ellipse.Fill>
+                                <RadialGradientBrush>
+                                    <GradientStop Offset="0"
+                                          Color="#FFEEAF66" />
+                                    <GradientStop Offset="1"
+                                          Color="#DEB887" />
+                                    <GradientStop Offset="1"
+                                          Color="#FFEEAF66" />
+                                    <RadialGradientBrush.Transform>
+                                        <TransformGroup>
+                                            <ScaleTransform ScaleY="0.65" />
+                                        </TransformGroup>
+                                    </RadialGradientBrush.Transform>
+                                </RadialGradientBrush>
+                            </Ellipse.Fill>
+                        </Ellipse>
+                        <ContentPresenter HorizontalAlignment="Center"
+                                  VerticalAlignment="Center"/>
+                    </Grid>
+                </ControlTemplate>
+            </Button.Template>
+        </Button>
+        <Button Background="BurlyWood" FontSize="15" Foreground="#FFE82424"  Content="Kritičar" HorizontalAlignment="Left" Height="53" Margin="438,244,0,0" VerticalAlignment="Top" Width="129"  Command="{Binding KriticarCommand}" FontWeight="Bold">
+            <Button.Template>
+                <ControlTemplate TargetType="Button">
+                    <Grid>
+                        <Ellipse Stroke="#FFE82424"
+                         StrokeThickness="2">
+                            <Ellipse.Fill>
+                                <RadialGradientBrush>
+                                    <GradientStop Offset="0"
+                                          Color="#FFEEAF66" />
+                                    <GradientStop Offset="1"
+                                          Color="#DEB887" />
+                                    <GradientStop Offset="1"
+                                          Color="#FFEEAF66" />
+                                    <RadialGradientBrush.Transform>
+                                        <TransformGroup>
+                                            <ScaleTransform ScaleY="0.65" />
+                                        </TransformGroup>
+                                    </RadialGradientBrush.Transform>
+                                </RadialGradientBrush>
+                            </Ellipse.Fill>
+                        </Ellipse>
+                        <ContentPresenter HorizontalAlignment="Center"
+                                  VerticalAlignment="Center"/>
+                    </Grid>
+                </ControlTemplate>
+            </Button.Template>
+        </Button>
+        <Button Background="BurlyWood" FontSize="15" Foreground="#FFE82424"  Content="Kategorija" HorizontalAlignment="Left" Height="54" Margin="83,335,0,0" VerticalAlignment="Top" Width="122" Command="{Binding KategorijaCommand}" FontWeight="Bold">
+            <Button.Template>
+                <ControlTemplate TargetType="Button">
+                    <Grid>
+                        <Ellipse Stroke="#FFE82424"
+                         StrokeThickness="2">
+                            <Ellipse.Fill>
+                                <RadialGradientBrush>
+                                    <GradientStop Offset="0"
+                                          Color="#FFEEAF66" />
+                                    <GradientStop Offset="1"
+                                          Color="#DEB887" />
+                                    <GradientStop Offset="1"
+                                          Color="#FFEEAF66" />
+                                    <RadialGradientBrush.Transform>
+                                        <TransformGroup>
+                                            <ScaleTransform ScaleY="0.65" />
+                                        </TransformGroup>
+                                    </RadialGradientBrush.Transform>
+                                </RadialGradientBrush>
+                            </Ellipse.Fill>
+                        </Ellipse>
+                        <ContentPresenter HorizontalAlignment="Center"
+                                  VerticalAlignment="Center"/>
+                    </Grid>
+                </ControlTemplate>
+            </Button.Template>
+        </Button>
+        <Button Background="BurlyWood" FontSize="15" Foreground="#FFE82424"  Content="Funkcije" HorizontalAlignment="Left" Height="54" Margin="445,335,0,0" VerticalAlignment="Top" Width="122" Command="{Binding FunkcijaCommand}" FontWeight="Bold">
+            <Button.Template>
+                <ControlTemplate TargetType="Button">
+                    <Grid>
+                        <Ellipse Stroke="#FFE82424"
+                         StrokeThickness="2">
+                            <Ellipse.Fill>
+                                <RadialGradientBrush>
+                                    <GradientStop Offset="0"
+                                          Color="#FFEEAF66" />
+                                    <GradientStop Offset="1"
+                                          Color="#DEB887" />
+                                    <GradientStop Offset="1"
+                                          Color="#FFEEAF66" />
+                                    <RadialGradientBrush.Transform>
+                                        <TransformGroup>
+                                            <ScaleTransform ScaleY="0.65" />
+                                        </TransformGroup>
+                                    </RadialGradientBrush.Transform>
+                                </RadialGradientBrush>
+                            </Ellipse.Fill>
+                        </Ellipse>
+                        <ContentPresenter HorizontalAlignment="Center"
+                                  VerticalAlignment="Center"/>
+                    </Grid>
+                </ControlTemplate>
+            </Button.Template>
+        </Button>
+        <Button Background="BurlyWood" FontSize="15" Foreground="#FFE82424"  Content="Izdaj" HorizontalAlignment="Left" Height="54" Margin="259,335,0,0" VerticalAlignment="Top" Width="122" Command="{Binding IzdajCommand}" FontWeight="Bold">
+            <Button.Template>
+                <ControlTemplate TargetType="Button">
+                    <Grid>
+                        <Ellipse Stroke="#FFE82424"
+                         StrokeThickness="2">
+                            <Ellipse.Fill>
+                                <RadialGradientBrush>
+                                    <GradientStop Offset="0"
+                                          Color="#FFEEAF66" />
+                                    <GradientStop Offset="1"
+                                          Color="#DEB887" />
+                                    <GradientStop Offset="1"
+                                          Color="#FFEEAF66" />
+                                    <RadialGradientBrush.Transform>
+                                        <TransformGroup>
+                                            <ScaleTransform ScaleY="0.65" />
+                                        </TransformGroup>
+                                    </RadialGradientBrush.Transform>
+                                </RadialGradientBrush>
+                            </Ellipse.Fill>
+                        </Ellipse>
+                        <ContentPresenter HorizontalAlignment="Center"
+                                  VerticalAlignment="Center"/>
+                    </Grid>
+                </ControlTemplate>
+            </Button.Template>
+        </Button>
+        <Button Background="BurlyWood" FontSize="15" Foreground="Blue"  HorizontalAlignment="Left" Height="34" Margin="556,0,0,0" VerticalAlignment="Top" Width="82" Command="{Binding ProfilCommand}">
+            <Button.Template>
+                <ControlTemplate TargetType="Button">
+                    <Grid>
+                        <Image Source="../profil.jpg" Stretch="Fill"/>
+                        <ContentPresenter HorizontalAlignment="Center"
+                                  VerticalAlignment="Center"/>
+                    </Grid>
+                </ControlTemplate>
+            </Button.Template>
+        </Button>
+        <Label Foreground="#FFE82424" Content="Izdavačka kuća" FontSize="35" HorizontalAlignment="Left" Height="54" Margin="145,0,0,0" VerticalAlignment="Top" Width="317" RenderTransformOrigin="1.175,0.787" FontFamily="Lucida Calligraphy" FontWeight="Bold"/>
+        <!--  <Button Content="Prodaj" HorizontalAlignment="Left" Height="54" Margin="429,319,0,0" VerticalAlignment="Top" Width="122" Command="{Binding ProdajCommand}"/> -->
+        <TextBlock TextWrapping="Wrap" Foreground="#FFE82424" Text="''Život je neshvatljivo čudo, jer se neprestano troši i osipa, a ipak traje i stoji čvrsto kao na Drini ćuprija.''" FontSize="15" HorizontalAlignment="Left" Height="65" Margin="315,394,0,0" VerticalAlignment="Top" Width="331" RenderTransformOrigin="1.175,0.787" FontFamily="Calibri" FontWeight="Bold"/>
+
+    </Grid>
+</Window>

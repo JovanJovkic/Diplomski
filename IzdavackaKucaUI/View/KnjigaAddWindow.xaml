@@ -1,0 +1,60 @@
+﻿<Window x:Class="IzdavackaKucaUI.View.KnjigaAddWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:IzdavackaKucaUI.View"
+        mc:Ignorable="d" Background="WhiteSmoke"
+      Title="Dodaj knjigu" Height="430.841" Width="792.151">
+    <Grid  HorizontalAlignment="Left" Width="792" Margin="0,0,-6.4,3.4">
+        <Grid.Background>
+            <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                <GradientStop Color="#FF4358CD" Offset="1"/>
+                <GradientStop Color="#FF6DDAF4"/>
+            </LinearGradientBrush>
+        </Grid.Background>
+        <Label Content="ID" FontSize="13" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="33,81,0,0" Height="25" Width="117"/>
+        <Label Content="Broj poglavlja" FontSize="13"  HorizontalAlignment="Left" VerticalAlignment="Top" Margin="33,129,0,0" Height="28" Width="117"/>
+        <Label Content="Broj strana" FontSize="13"  HorizontalAlignment="Left" VerticalAlignment="Top" Margin="33,177,0,0" Height="25" Width="117"/>
+        <Label Content="Naziv" FontSize="13"  HorizontalAlignment="Left" VerticalAlignment="Top" Margin="33,225,0,0" Height="25" Width="117"/>
+        <TextBox VerticalContentAlignment="Center" Text="{Binding Knjiga.Knjiga.KnjigaId, UpdateSourceTrigger=PropertyChanged}" IsReadOnly="{Binding DaLiJeIzmena}" HorizontalAlignment="Left" Height="25" Margin="125,81,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="170"/>
+        <TextBox VerticalContentAlignment="Center" Text="{Binding Knjiga.Knjiga.BrojPoglavlja, UpdateSourceTrigger=PropertyChanged}" HorizontalAlignment="Left" Height="25" Margin="125,129,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="170"/>
+        <TextBox VerticalContentAlignment="Center" Text="{Binding Knjiga.Knjiga.BrojStrana, UpdateSourceTrigger=PropertyChanged}" HorizontalAlignment="Left" Height="25" Margin="125,177,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="170"/>
+        <TextBox VerticalContentAlignment="Center" Text="{Binding Knjiga.Knjiga.Naziv, UpdateSourceTrigger=PropertyChanged}" HorizontalAlignment="Left" Height="25" Margin="125,225,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="170"/>
+
+        <Button Content="Dodaj" FontSize="18"  HorizontalAlignment="Left" Height="35" Margin="183,330,0,0" VerticalAlignment="Top" Width="103" Command="{Binding AddCommand}" Background="#FFDDD6D6" RenderTransformOrigin="1.118,0.923"/>
+        <Button Content="Odustani" FontSize="18" HorizontalAlignment="Left" Height="35" Margin="447,330,0,0" VerticalAlignment="Top" Width="103" Command="{Binding ExitCommand}" Background="#FFDDD6D6" RenderTransformOrigin="5.284,4.035"/>
+
+        <Label Content="{Binding Knjiga.ValidationErrors[Id]}" Foreground="Red" FontSize="10" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="125,104,0,0" Height="23" Width="170"/>
+        <Label Content="{Binding Knjiga.ValidationErrors[BrojPoglavlja]}" Foreground="Red" FontSize="10" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="125,152,0,0" Height="23" Width="170"/>
+        <Label Content="{Binding Knjiga.ValidationErrors[BrojStrana]}" Foreground="Red" FontSize="10" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="125,200,0,0" Height="23" Width="170"/>
+        <Label Content="{Binding Knjiga.ValidationErrors[Naziv]}" Foreground="Red" FontSize="10" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="125,248,0,0" Height="23" Width="170"/>
+        <Label Content="{Binding KategorijaIzabranaGreska}" Foreground="Red" FontSize="10" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="349,294,0,0" Height="23" Width="201"/>
+        <Label Content="{Binding PisacIzabranGreska}" Foreground="Red" FontSize="10" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="555,294,0,0" Height="23" Width="201"/>
+
+        <ListView BorderBrush="#FFE05555" BorderThickness="7" ItemsSource="{Binding SveKategorije}" Margin="349,81,242,109.2">
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <StackPanel>
+                        <TextBlock Text="{Binding Text}" />
+                        <CheckBox IsChecked="{Binding IsSelected}" />
+                    </StackPanel>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
+        <ListView BorderBrush="#FFE05555" BorderThickness="7" ItemsSource="{Binding SviPisci}" Margin="555,81,36,109.2">
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <StackPanel>
+                        <TextBlock Text="{Binding Text}" />
+                        <CheckBox IsChecked="{Binding IsSelected}" />
+                    </StackPanel>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
+        <Label Content="Izaberite kategorije" FontSize="13" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="349,56,0,0" Height="28" Width="144"/>
+        <Label Content="Izaberite pisce" FontSize="13" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="555,56,0,0" Height="28" Width="117" RenderTransformOrigin="3.424,0.508"/>
+        <Label Foreground="#FFE05555" Content="Nova knjiga" FontSize="24" HorizontalAlignment="Left" Height="48" Margin="269,10,0,0" VerticalAlignment="Top" Width="224" RenderTransformOrigin="1.175,0.787" FontFamily="Lucida Calligraphy" FontWeight="Bold"/>
+
+    </Grid>
+</Window>

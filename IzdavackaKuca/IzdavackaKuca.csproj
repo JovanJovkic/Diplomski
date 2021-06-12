@@ -1,0 +1,161 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{4CF6958E-3BC1-4731-B4DE-5ED1E3BE07F6}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>IzdavackaKuca</RootNamespace>
+    <AssemblyName>IzdavackaKuca</AssemblyName>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <Deterministic>true</Deterministic>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="dao\BaseRepo.cs" />
+    <Compile Include="dao\DogadjajDao.cs" />
+    <Compile Include="dao\Funkcija1Dao.cs" />
+    <Compile Include="dao\Funkcija5Dao.cs" />
+    <Compile Include="dao\IRepository.cs" />
+    <Compile Include="dao\IzdajeDao.cs" />
+    <Compile Include="dao\KategorijaDao.cs" />
+    <Compile Include="dao\KnjigaDao.cs" />
+    <Compile Include="dao\KnjizaraDao.cs" />
+    <Compile Include="dao\KorisnikDao.cs" />
+    <Compile Include="dao\KriticarDao.cs" />
+    <Compile Include="dao\NagradaDao.cs" />
+    <Compile Include="dao\OdeljenjeDao.cs" />
+    <Compile Include="dao\PisacDao.cs" />
+    <Compile Include="dao\RadnikDao.cs" />
+    <Compile Include="dao\RecenzijaDao.cs" />
+    <Compile Include="Dogadjaj.cs">
+      <DependentUpon>ModelIzdavackaKuca.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Funkcija1_Result.cs">
+      <DependentUpon>ModelIzdavackaKuca.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Funkcija5_Result.cs">
+      <DependentUpon>ModelIzdavackaKuca.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Funkcija9_Result.cs">
+      <DependentUpon>ModelIzdavackaKuca.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Izdaje.cs">
+      <DependentUpon>ModelIzdavackaKuca.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Kategorija.cs">
+      <DependentUpon>ModelIzdavackaKuca.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Knjiga.cs">
+      <DependentUpon>ModelIzdavackaKuca.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Knjizara.cs">
+      <DependentUpon>ModelIzdavackaKuca.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Korisnik.cs">
+      <DependentUpon>ModelIzdavackaKuca.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Kriticar.cs">
+      <DependentUpon>ModelIzdavackaKuca.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ModelIzdavackaKuca.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ModelIzdavackaKuca.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ModelIzdavackaKuca.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ModelIzdavackaKuca.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ModelIzdavackaKuca.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ModelIzdavackaKuca.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="Nagrada.cs">
+      <DependentUpon>ModelIzdavackaKuca.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Odeljenje.cs">
+      <DependentUpon>ModelIzdavackaKuca.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Pisac.cs">
+      <DependentUpon>ModelIzdavackaKuca.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Radnik.cs">
+      <DependentUpon>ModelIzdavackaKuca.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Recenzija.cs">
+      <DependentUpon>ModelIzdavackaKuca.tt</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <EntityDeploy Include="ModelIzdavackaKuca.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>ModelIzdavackaKuca.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.Config" />
+    <None Include="ModelIzdavackaKuca.edmx.diagram">
+      <DependentUpon>ModelIzdavackaKuca.edmx</DependentUpon>
+    </None>
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="ModelIzdavackaKuca.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <LastGenOutput>ModelIzdavackaKuca.Context.cs</LastGenOutput>
+      <DependentUpon>ModelIzdavackaKuca.edmx</DependentUpon>
+    </Content>
+    <Content Include="ModelIzdavackaKuca.edmx.sql" />
+    <Content Include="ModelIzdavackaKuca.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <LastGenOutput>ModelIzdavackaKuca.cs</LastGenOutput>
+      <DependentUpon>ModelIzdavackaKuca.edmx</DependentUpon>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>

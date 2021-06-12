@@ -1,0 +1,1000 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+    <Schema Namespace="ModelIzdavackaKuca.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2012" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityContainer Name="ModelIzdavackaKucaStoreContainer">
+    <EntitySet Name="Odeljenjes" EntityType="ModelIzdavackaKuca.Store.Odeljenjes" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Dogadjajs" EntityType="ModelIzdavackaKuca.Store.Dogadjajs" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Nagradas" EntityType="ModelIzdavackaKuca.Store.Nagradas" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Recenzijas" EntityType="ModelIzdavackaKuca.Store.Recenzijas" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Knjigas" EntityType="ModelIzdavackaKuca.Store.Knjigas" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Kategorijas" EntityType="ModelIzdavackaKuca.Store.Kategorijas" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Knjizaras" EntityType="ModelIzdavackaKuca.Store.Knjizaras" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Radniks" EntityType="ModelIzdavackaKuca.Store.Radniks" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Izdajes" EntityType="ModelIzdavackaKuca.Store.Izdajes" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Pisacs" EntityType="ModelIzdavackaKuca.Store.Pisacs" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Kriticars" EntityType="ModelIzdavackaKuca.Store.Kriticars" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Korisniks" EntityType="ModelIzdavackaKuca.Store.Korisniks" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="KnjigaKategorija" EntityType="ModelIzdavackaKuca.Store.KnjigaKategorija" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="IzdajeNagrada" EntityType="ModelIzdavackaKuca.Store.IzdajeNagrada" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="KnjizaraIzdaje" EntityType="ModelIzdavackaKuca.Store.KnjizaraIzdaje" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="PisacKnjiga" EntityType="ModelIzdavackaKuca.Store.PisacKnjiga" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="PisacDogadjaj" EntityType="ModelIzdavackaKuca.Store.PisacDogadjaj" store:Type="Tables" Schema="dbo" />
+    <AssociationSet Name="FK_KnjigaKategorija_Knjiga" Association="ModelIzdavackaKuca.Store.FK_KnjigaKategorija_Knjiga">
+      <End Role="Knjiga" EntitySet="Knjigas" />
+      <End Role="KnjigaKategorija" EntitySet="KnjigaKategorija" />
+    </AssociationSet>
+    <AssociationSet Name="FK_KnjigaKategorija_Kategorija" Association="ModelIzdavackaKuca.Store.FK_KnjigaKategorija_Kategorija">
+      <End Role="Kategorija" EntitySet="Kategorijas" />
+      <End Role="KnjigaKategorija" EntitySet="KnjigaKategorija" />
+    </AssociationSet>
+    <AssociationSet Name="OdeljenjeRadnik" Association="ModelIzdavackaKuca.Store.OdeljenjeRadnik">
+      <End Role="Odeljenje" EntitySet="Odeljenjes" />
+      <End Role="Radnik" EntitySet="Radniks" />
+    </AssociationSet>
+    <AssociationSet Name="KnjigaRecenzija" Association="ModelIzdavackaKuca.Store.KnjigaRecenzija">
+      <End Role="Knjiga" EntitySet="Knjigas" />
+      <End Role="Recenzija" EntitySet="Recenzijas" />
+    </AssociationSet>
+    <AssociationSet Name="OdeljenjeIzdaje" Association="ModelIzdavackaKuca.Store.OdeljenjeIzdaje">
+      <End Role="Odeljenje" EntitySet="Odeljenjes" />
+      <End Role="Izdaje" EntitySet="Izdajes" />
+    </AssociationSet>
+    <AssociationSet Name="FK_IzdajeNagrada_Izdaje" Association="ModelIzdavackaKuca.Store.FK_IzdajeNagrada_Izdaje">
+      <End Role="Izdaje" EntitySet="Izdajes" />
+      <End Role="IzdajeNagrada" EntitySet="IzdajeNagrada" />
+    </AssociationSet>
+    <AssociationSet Name="FK_IzdajeNagrada_Nagrada" Association="ModelIzdavackaKuca.Store.FK_IzdajeNagrada_Nagrada">
+      <End Role="Nagrada" EntitySet="Nagradas" />
+      <End Role="IzdajeNagrada" EntitySet="IzdajeNagrada" />
+    </AssociationSet>
+    <AssociationSet Name="FK_KnjizaraIzdaje_Knjizara" Association="ModelIzdavackaKuca.Store.FK_KnjizaraIzdaje_Knjizara">
+      <End Role="Knjizara" EntitySet="Knjizaras" />
+      <End Role="KnjizaraIzdaje" EntitySet="KnjizaraIzdaje" />
+    </AssociationSet>
+    <AssociationSet Name="FK_KnjizaraIzdaje_Izdaje" Association="ModelIzdavackaKuca.Store.FK_KnjizaraIzdaje_Izdaje">
+      <End Role="Izdaje" EntitySet="Izdajes" />
+      <End Role="KnjizaraIzdaje" EntitySet="KnjizaraIzdaje" />
+    </AssociationSet>
+    <AssociationSet Name="PisacRadnik" Association="ModelIzdavackaKuca.Store.PisacRadnik">
+      <End Role="Pisac" EntitySet="Pisacs" />
+      <End Role="Radnik" EntitySet="Radniks" />
+    </AssociationSet>
+    <AssociationSet Name="FK_PisacKnjiga_Pisac" Association="ModelIzdavackaKuca.Store.FK_PisacKnjiga_Pisac">
+      <End Role="Pisac" EntitySet="Pisacs" />
+      <End Role="PisacKnjiga" EntitySet="PisacKnjiga" />
+    </AssociationSet>
+    <AssociationSet Name="FK_PisacKnjiga_Knjiga" Association="ModelIzdavackaKuca.Store.FK_PisacKnjiga_Knjiga">
+      <End Role="Knjiga" EntitySet="Knjigas" />
+      <End Role="PisacKnjiga" EntitySet="PisacKnjiga" />
+    </AssociationSet>
+    <AssociationSet Name="KnjigaIzdaje" Association="ModelIzdavackaKuca.Store.KnjigaIzdaje">
+      <End Role="Knjiga" EntitySet="Knjigas" />
+      <End Role="Izdaje" EntitySet="Izdajes" />
+    </AssociationSet>
+    <AssociationSet Name="KriticarRadnik" Association="ModelIzdavackaKuca.Store.KriticarRadnik">
+      <End Role="Kriticar" EntitySet="Kriticars" />
+      <End Role="Radnik" EntitySet="Radniks" />
+    </AssociationSet>
+    <AssociationSet Name="FK_PisacDogadjaj_Pisac" Association="ModelIzdavackaKuca.Store.FK_PisacDogadjaj_Pisac">
+      <End Role="Pisac" EntitySet="Pisacs" />
+      <End Role="PisacDogadjaj" EntitySet="PisacDogadjaj" />
+    </AssociationSet>
+    <AssociationSet Name="FK_PisacDogadjaj_Dogadjaj" Association="ModelIzdavackaKuca.Store.FK_PisacDogadjaj_Dogadjaj">
+      <End Role="Dogadjaj" EntitySet="Dogadjajs" />
+      <End Role="PisacDogadjaj" EntitySet="PisacDogadjaj" />
+    </AssociationSet>
+    <AssociationSet Name="KriticarRecenzija" Association="ModelIzdavackaKuca.Store.KriticarRecenzija">
+      <End Role="Kriticar" EntitySet="Kriticars" />
+      <End Role="Recenzija" EntitySet="Recenzijas" />
+    </AssociationSet>
+  </EntityContainer>
+  <EntityType Name="Odeljenjes">
+    <Key>
+      <PropertyRef Name="OdeljenjeId" />
+    </Key>
+    <Property Name="OdeljenjeId" Type="int" Nullable="false" />
+    <Property Name="ImeOsnivaca" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="PrezimeOsnivaca" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Naziv" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Mesto" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Ulica" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Broj" Type="int" Nullable="false" />
+    <Property Name="Telefon" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Pib" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="DatumOsnivanja" Type="datetime" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Dogadjajs">
+    <Key>
+      <PropertyRef Name="DogadjajId" />
+    </Key>
+    <Property Name="DogadjajId" Type="int" Nullable="false" />
+    <Property Name="Mesto" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Ulica" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Broj" Type="int" Nullable="false" />
+    <Property Name="BrojMesta" Type="int" Nullable="false" />
+    <Property Name="Tip" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Posveceno" Type="nvarchar(max)" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Nagradas">
+    <Key>
+      <PropertyRef Name="NagradaId" />
+    </Key>
+    <Property Name="NagradaId" Type="int" Nullable="false" />
+    <Property Name="Naziv" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="NovcanaNagrada" Type="int" Nullable="false" />
+    <Property Name="Drzavna" Type="bit" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Recenzijas">
+    <Key>
+      <PropertyRef Name="RecenzijaId" />
+    </Key>
+    <Property Name="RecenzijaId" Type="int" Nullable="false" />
+    <Property Name="Ocena" Type="int" Nullable="false" />
+    <Property Name="BrojStrana" Type="int" Nullable="false" />
+    <Property Name="KnjigaKnjigaId" Type="int" Nullable="false" />
+    <Property Name="Kriticar_Jmbg" Type="bigint" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Knjigas">
+    <Key>
+      <PropertyRef Name="KnjigaId" />
+    </Key>
+    <Property Name="KnjigaId" Type="int" Nullable="false" />
+    <Property Name="BrojPoglavlja" Type="int" Nullable="false" />
+    <Property Name="BrojStrana" Type="int" Nullable="false" />
+    <Property Name="Naziv" Type="nvarchar(max)" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Kategorijas">
+    <Key>
+      <PropertyRef Name="KategorijaId" />
+    </Key>
+    <Property Name="KategorijaId" Type="int" Nullable="false" />
+    <Property Name="Naziv" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="KnjizevniRod" Type="nvarchar(max)" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Knjizaras">
+    <Key>
+      <PropertyRef Name="KnjizaraId" />
+    </Key>
+    <Property Name="KnjizaraId" Type="int" Nullable="false" />
+    <Property Name="Naziv" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Mesto" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Ulica" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Broj" Type="int" Nullable="false" />
+    <Property Name="Telefon" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Pib" Type="nvarchar(max)" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Radniks">
+    <Key>
+      <PropertyRef Name="Jmbg" />
+    </Key>
+    <Property Name="Jmbg" Type="bigint" Nullable="false" />
+    <Property Name="Ime" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Prezime" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Plata" Type="int" Nullable="false" />
+    <Property Name="Mesto" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Ulica" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Broj" Type="int" Nullable="false" />
+    <Property Name="Telefon" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="OdeljenjeOdeljenjeId" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Izdajes">
+    <Key>
+      <PropertyRef Name="KnjigaKnjigaId" />
+      <PropertyRef Name="OdeljenjeOdeljenjeId" />
+    </Key>
+    <Property Name="KnjigaKnjigaId" Type="int" Nullable="false" />
+    <Property Name="OdeljenjeOdeljenjeId" Type="int" Nullable="false" />
+    <Property Name="Knjiga_KnjigaId" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Pisacs">
+    <Key>
+      <PropertyRef Name="Jmbg" />
+    </Key>
+    <Property Name="Jmbg" Type="bigint" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Kriticars">
+    <Key>
+      <PropertyRef Name="Jmbg" />
+    </Key>
+    <Property Name="Jmbg" Type="bigint" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Korisniks">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Username" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Password" Type="nvarchar(max)" Nullable="false" />
+  </EntityType>
+  <EntityType Name="KnjigaKategorija">
+    <Key>
+      <PropertyRef Name="Knjigas_KnjigaId" />
+      <PropertyRef Name="Kategorijas_KategorijaId" />
+    </Key>
+    <Property Name="Knjigas_KnjigaId" Type="int" Nullable="false" />
+    <Property Name="Kategorijas_KategorijaId" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="IzdajeNagrada">
+    <Key>
+      <PropertyRef Name="Izdajes_KnjigaKnjigaId" />
+      <PropertyRef Name="Izdajes_OdeljenjeOdeljenjeId" />
+      <PropertyRef Name="Nagradas_NagradaId" />
+    </Key>
+    <Property Name="Izdajes_KnjigaKnjigaId" Type="int" Nullable="false" />
+    <Property Name="Izdajes_OdeljenjeOdeljenjeId" Type="int" Nullable="false" />
+    <Property Name="Nagradas_NagradaId" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="KnjizaraIzdaje">
+    <Key>
+      <PropertyRef Name="Knjizaras_KnjizaraId" />
+      <PropertyRef Name="Izdajes_KnjigaKnjigaId" />
+      <PropertyRef Name="Izdajes_OdeljenjeOdeljenjeId" />
+    </Key>
+    <Property Name="Knjizaras_KnjizaraId" Type="int" Nullable="false" />
+    <Property Name="Izdajes_KnjigaKnjigaId" Type="int" Nullable="false" />
+    <Property Name="Izdajes_OdeljenjeOdeljenjeId" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="PisacKnjiga">
+    <Key>
+      <PropertyRef Name="Pisacs_Jmbg" />
+      <PropertyRef Name="Knjigas_KnjigaId" />
+    </Key>
+    <Property Name="Pisacs_Jmbg" Type="bigint" Nullable="false" />
+    <Property Name="Knjigas_KnjigaId" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="PisacDogadjaj">
+    <Key>
+      <PropertyRef Name="Pisacs_Jmbg" />
+      <PropertyRef Name="Dogadjajs_DogadjajId" />
+    </Key>
+    <Property Name="Pisacs_Jmbg" Type="bigint" Nullable="false" />
+    <Property Name="Dogadjajs_DogadjajId" Type="int" Nullable="false" />
+  </EntityType>
+  <Association Name="OdeljenjeRadnik">
+    <End Role="Odeljenje" Type="ModelIzdavackaKuca.Store.Odeljenjes" Multiplicity="1" />
+    <End Role="Radnik" Type="ModelIzdavackaKuca.Store.Radniks" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Odeljenje">
+        <PropertyRef Name="OdeljenjeId" />
+      </Principal>
+      <Dependent Role="Radnik">
+        <PropertyRef Name="OdeljenjeOdeljenjeId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="KnjigaRecenzija">
+    <End Role="Knjiga" Type="ModelIzdavackaKuca.Store.Knjigas" Multiplicity="1" />
+    <End Role="Recenzija" Type="ModelIzdavackaKuca.Store.Recenzijas" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Knjiga">
+        <PropertyRef Name="KnjigaId" />
+      </Principal>
+      <Dependent Role="Recenzija">
+        <PropertyRef Name="KnjigaKnjigaId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="OdeljenjeIzdaje">
+    <End Role="Odeljenje" Type="ModelIzdavackaKuca.Store.Odeljenjes" Multiplicity="1" />
+    <End Role="Izdaje" Type="ModelIzdavackaKuca.Store.Izdajes" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Odeljenje">
+        <PropertyRef Name="OdeljenjeId" />
+      </Principal>
+      <Dependent Role="Izdaje">
+        <PropertyRef Name="OdeljenjeOdeljenjeId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="PisacRadnik">
+    <End Role="Pisac" Type="ModelIzdavackaKuca.Store.Pisacs" Multiplicity="0..1" />
+    <End Role="Radnik" Type="ModelIzdavackaKuca.Store.Radniks" Multiplicity="1" />
+    <ReferentialConstraint>
+      <Principal Role="Radnik">
+        <PropertyRef Name="Jmbg" />
+      </Principal>
+      <Dependent Role="Pisac">
+        <PropertyRef Name="Jmbg" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="KnjigaIzdaje">
+    <End Role="Knjiga" Type="ModelIzdavackaKuca.Store.Knjigas" Multiplicity="1" />
+    <End Role="Izdaje" Type="ModelIzdavackaKuca.Store.Izdajes" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Knjiga">
+        <PropertyRef Name="KnjigaId" />
+      </Principal>
+      <Dependent Role="Izdaje">
+        <PropertyRef Name="Knjiga_KnjigaId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="KriticarRadnik">
+    <End Role="Kriticar" Type="ModelIzdavackaKuca.Store.Kriticars" Multiplicity="0..1" />
+    <End Role="Radnik" Type="ModelIzdavackaKuca.Store.Radniks" Multiplicity="1" />
+    <ReferentialConstraint>
+      <Principal Role="Radnik">
+        <PropertyRef Name="Jmbg" />
+      </Principal>
+      <Dependent Role="Kriticar">
+        <PropertyRef Name="Jmbg" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="KriticarRecenzija">
+    <End Role="Kriticar" Type="ModelIzdavackaKuca.Store.Kriticars" Multiplicity="1" />
+    <End Role="Recenzija" Type="ModelIzdavackaKuca.Store.Recenzijas" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Kriticar">
+        <PropertyRef Name="Jmbg" />
+      </Principal>
+      <Dependent Role="Recenzija">
+        <PropertyRef Name="Kriticar_Jmbg" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_KnjigaKategorija_Knjiga">
+    <End Role="Knjiga" Type="ModelIzdavackaKuca.Store.Knjigas" Multiplicity="1" />
+    <End Role="KnjigaKategorija" Type="ModelIzdavackaKuca.Store.KnjigaKategorija" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Knjiga">
+        <PropertyRef Name="KnjigaId" />
+      </Principal>
+      <Dependent Role="KnjigaKategorija">
+        <PropertyRef Name="Knjigas_KnjigaId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_KnjigaKategorija_Kategorija">
+    <End Role="KnjigaKategorija" Type="ModelIzdavackaKuca.Store.KnjigaKategorija" Multiplicity="*" />
+    <End Role="Kategorija" Type="ModelIzdavackaKuca.Store.Kategorijas" Multiplicity="1" />
+    <ReferentialConstraint>
+      <Principal Role="Kategorija">
+        <PropertyRef Name="KategorijaId" />
+      </Principal>
+      <Dependent Role="KnjigaKategorija">
+        <PropertyRef Name="Kategorijas_KategorijaId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_IzdajeNagrada_Izdaje">
+    <End Role="Izdaje" Type="ModelIzdavackaKuca.Store.Izdajes" Multiplicity="1" />
+    <End Role="IzdajeNagrada" Type="ModelIzdavackaKuca.Store.IzdajeNagrada" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Izdaje">
+        <PropertyRef Name="KnjigaKnjigaId" />
+        <PropertyRef Name="OdeljenjeOdeljenjeId" />
+      </Principal>
+      <Dependent Role="IzdajeNagrada">
+        <PropertyRef Name="Izdajes_KnjigaKnjigaId" />
+        <PropertyRef Name="Izdajes_OdeljenjeOdeljenjeId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_IzdajeNagrada_Nagrada">
+    <End Role="IzdajeNagrada" Type="ModelIzdavackaKuca.Store.IzdajeNagrada" Multiplicity="*" />
+    <End Role="Nagrada" Type="ModelIzdavackaKuca.Store.Nagradas" Multiplicity="1" />
+    <ReferentialConstraint>
+      <Principal Role="Nagrada">
+        <PropertyRef Name="NagradaId" />
+      </Principal>
+      <Dependent Role="IzdajeNagrada">
+        <PropertyRef Name="Nagradas_NagradaId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_KnjizaraIzdaje_Knjizara">
+    <End Role="Knjizara" Type="ModelIzdavackaKuca.Store.Knjizaras" Multiplicity="1" />
+    <End Role="KnjizaraIzdaje" Type="ModelIzdavackaKuca.Store.KnjizaraIzdaje" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Knjizara">
+        <PropertyRef Name="KnjizaraId" />
+      </Principal>
+      <Dependent Role="KnjizaraIzdaje">
+        <PropertyRef Name="Knjizaras_KnjizaraId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_KnjizaraIzdaje_Izdaje">
+    <End Role="KnjizaraIzdaje" Type="ModelIzdavackaKuca.Store.KnjizaraIzdaje" Multiplicity="*" />
+    <End Role="Izdaje" Type="ModelIzdavackaKuca.Store.Izdajes" Multiplicity="1" />
+    <ReferentialConstraint>
+      <Principal Role="Izdaje">
+        <PropertyRef Name="KnjigaKnjigaId" />
+        <PropertyRef Name="OdeljenjeOdeljenjeId" />
+      </Principal>
+      <Dependent Role="KnjizaraIzdaje">
+        <PropertyRef Name="Izdajes_KnjigaKnjigaId" />
+        <PropertyRef Name="Izdajes_OdeljenjeOdeljenjeId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_PisacKnjiga_Pisac">
+    <End Role="Pisac" Type="ModelIzdavackaKuca.Store.Pisacs" Multiplicity="1" />
+    <End Role="PisacKnjiga" Type="ModelIzdavackaKuca.Store.PisacKnjiga" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Pisac">
+        <PropertyRef Name="Jmbg" />
+      </Principal>
+      <Dependent Role="PisacKnjiga">
+        <PropertyRef Name="Pisacs_Jmbg" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_PisacKnjiga_Knjiga">
+    <End Role="PisacKnjiga" Type="ModelIzdavackaKuca.Store.PisacKnjiga" Multiplicity="*" />
+    <End Role="Knjiga" Type="ModelIzdavackaKuca.Store.Knjigas" Multiplicity="1" />
+    <ReferentialConstraint>
+      <Principal Role="Knjiga">
+        <PropertyRef Name="KnjigaId" />
+      </Principal>
+      <Dependent Role="PisacKnjiga">
+        <PropertyRef Name="Knjigas_KnjigaId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_PisacDogadjaj_Pisac">
+    <End Role="Pisac" Type="ModelIzdavackaKuca.Store.Pisacs" Multiplicity="1" />
+    <End Role="PisacDogadjaj" Type="ModelIzdavackaKuca.Store.PisacDogadjaj" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Pisac">
+        <PropertyRef Name="Jmbg" />
+      </Principal>
+      <Dependent Role="PisacDogadjaj">
+        <PropertyRef Name="Pisacs_Jmbg" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_PisacDogadjaj_Dogadjaj">
+    <End Role="PisacDogadjaj" Type="ModelIzdavackaKuca.Store.PisacDogadjaj" Multiplicity="*" />
+    <End Role="Dogadjaj" Type="ModelIzdavackaKuca.Store.Dogadjajs" Multiplicity="1" />
+    <ReferentialConstraint>
+      <Principal Role="Dogadjaj">
+        <PropertyRef Name="DogadjajId" />
+      </Principal>
+      <Dependent Role="PisacDogadjaj">
+        <PropertyRef Name="Dogadjajs_DogadjajId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+</Schema></edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema xmlns="http://schemas.microsoft.com/ado/2009/11/edm" xmlns:cg="http://schemas.microsoft.com/ado/2006/04/codegeneration" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" Namespace="ModelIzdavackaKuca" Alias="Self" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" annotation:UseStrongSpatialTypes="false">
+        <EntityContainer Name="ModelIzdavackaKucaContainer" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="Odeljenjes" EntityType="ModelIzdavackaKuca.Odeljenje" />
+          <EntitySet Name="Dogadjajs" EntityType="ModelIzdavackaKuca.Dogadjaj" />
+          <EntitySet Name="Nagradas" EntityType="ModelIzdavackaKuca.Nagrada" />
+          <EntitySet Name="Recenzijas" EntityType="ModelIzdavackaKuca.Recenzija" />
+          <EntitySet Name="Knjigas" EntityType="ModelIzdavackaKuca.Knjiga" />
+          <EntitySet Name="Kategorijas" EntityType="ModelIzdavackaKuca.Kategorija" />
+          <EntitySet Name="Knjizaras" EntityType="ModelIzdavackaKuca.Knjizara" />
+          <AssociationSet Name="KnjigaKategorija" Association="ModelIzdavackaKuca.KnjigaKategorija">
+            <End Role="Knjiga" EntitySet="Knjigas" />
+            <End Role="Kategorija" EntitySet="Kategorijas" />
+          </AssociationSet>
+          <EntitySet Name="Radniks" EntityType="ModelIzdavackaKuca.Radnik" />
+          <AssociationSet Name="OdeljenjeRadnik" Association="ModelIzdavackaKuca.OdeljenjeRadnik">
+            <End Role="Odeljenje" EntitySet="Odeljenjes" />
+            <End Role="Radnik" EntitySet="Radniks" />
+          </AssociationSet>
+          <AssociationSet Name="KnjigaRecenzija" Association="ModelIzdavackaKuca.KnjigaRecenzija">
+            <End Role="Knjiga" EntitySet="Knjigas" />
+            <End Role="Recenzija" EntitySet="Recenzijas" />
+          </AssociationSet>
+          <EntitySet Name="Izdajes" EntityType="ModelIzdavackaKuca.Izdaje" />
+          <AssociationSet Name="OdeljenjeIzdaje" Association="ModelIzdavackaKuca.OdeljenjeIzdaje">
+            <End Role="Odeljenje" EntitySet="Odeljenjes" />
+            <End Role="Izdaje" EntitySet="Izdajes" />
+          </AssociationSet>
+          <AssociationSet Name="IzdajeNagrada" Association="ModelIzdavackaKuca.IzdajeNagrada">
+            <End Role="Izdaje" EntitySet="Izdajes" />
+            <End Role="Nagrada" EntitySet="Nagradas" />
+          </AssociationSet>
+          <AssociationSet Name="KnjizaraIzdaje" Association="ModelIzdavackaKuca.KnjizaraIzdaje">
+            <End Role="Knjizara" EntitySet="Knjizaras" />
+            <End Role="Izdaje" EntitySet="Izdajes" />
+          </AssociationSet>
+          <EntitySet Name="Pisacs" EntityType="ModelIzdavackaKuca.Pisac" />
+          <AssociationSet Name="PisacRadnik" Association="ModelIzdavackaKuca.PisacRadnik">
+            <End Role="Pisac" EntitySet="Pisacs" />
+            <End Role="Radnik" EntitySet="Radniks" />
+          </AssociationSet>
+          <AssociationSet Name="PisacKnjiga" Association="ModelIzdavackaKuca.PisacKnjiga">
+            <End Role="Pisac" EntitySet="Pisacs" />
+            <End Role="Knjiga" EntitySet="Knjigas" />
+          </AssociationSet>
+          <AssociationSet Name="KnjigaIzdaje" Association="ModelIzdavackaKuca.KnjigaIzdaje">
+            <End Role="Knjiga" EntitySet="Knjigas" />
+            <End Role="Izdaje" EntitySet="Izdajes" />
+          </AssociationSet>
+          <EntitySet Name="Kriticars" EntityType="ModelIzdavackaKuca.Kriticar" />
+          <AssociationSet Name="KriticarRadnik" Association="ModelIzdavackaKuca.KriticarRadnik">
+            <End Role="Kriticar" EntitySet="Kriticars" />
+            <End Role="Radnik" EntitySet="Radniks" />
+          </AssociationSet>
+          <AssociationSet Name="PisacDogadjaj" Association="ModelIzdavackaKuca.PisacDogadjaj">
+            <End Role="Pisac" EntitySet="Pisacs" />
+            <End Role="Dogadjaj" EntitySet="Dogadjajs" />
+          </AssociationSet>
+          <AssociationSet Name="KriticarRecenzija" Association="ModelIzdavackaKuca.KriticarRecenzija">
+            <End Role="Kriticar" EntitySet="Kriticars" />
+            <End Role="Recenzija" EntitySet="Recenzijas" />
+          </AssociationSet>
+          <FunctionImport Name="Funkcija1" IsComposable="true" ReturnType="Collection(ModelIzdavackaKuca.Funkcija1_Result)">
+          <Parameter Name="nazivKategorije" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="Funkcija5" IsComposable="true" ReturnType="Collection(ModelIzdavackaKuca.Funkcija5_Result)">
+          <Parameter Name="knjRod" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="Funkcija9" IsComposable="true" ReturnType="Collection(ModelIzdavackaKuca.Funkcija9_Result)">
+          <Parameter Name="knjRod" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="Procedure1">
+            <Parameter Name="id1" Mode="In" Type="Int32" />
+            <Parameter Name="naziv" Mode="In" Type="String" />
+            <Parameter Name="knjrod" Mode="In" Type="String" />
+          </FunctionImport>
+          <EntitySet Name="Korisniks" EntityType="ModelIzdavackaKuca.Korisnik" />
+        </EntityContainer>
+        <EntityType Name="Odeljenje">
+          <Key>
+            <PropertyRef Name="OdeljenjeId" />
+          </Key>
+          <Property Name="OdeljenjeId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="None" />
+          <Property Name="ImeOsnivaca" Type="String" Nullable="false" MaxLength="Max" Unicode="true" FixedLength="false" />
+          <Property Name="PrezimeOsnivaca" Type="String" Nullable="false" MaxLength="Max" Unicode="true" FixedLength="false" />
+          <Property Name="Naziv" Type="String" Nullable="false" MaxLength="Max" Unicode="true" FixedLength="false" />
+          <Property Name="Mesto" Type="String" Nullable="false" MaxLength="Max" Unicode="true" FixedLength="false" />
+          <Property Name="Ulica" Type="String" Nullable="false" MaxLength="Max" Unicode="true" FixedLength="false" />
+          <Property Name="Broj" Type="Int32" Nullable="false" />
+          <Property Name="Telefon" Type="String" Nullable="false" MaxLength="Max" Unicode="true" FixedLength="false" />
+          <Property Name="Pib" Type="String" Nullable="false" MaxLength="Max" Unicode="true" FixedLength="false" />
+          <Property Name="DatumOsnivanja" Type="DateTime" Nullable="false" Precision="3" />
+          <NavigationProperty Name="Radniks" Relationship="ModelIzdavackaKuca.OdeljenjeRadnik" FromRole="Odeljenje" ToRole="Radnik" />
+          <NavigationProperty Name="Izdajes" Relationship="ModelIzdavackaKuca.OdeljenjeIzdaje" FromRole="Odeljenje" ToRole="Izdaje" />
+        </EntityType>
+        <EntityType Name="Dogadjaj">
+          <Key>
+            <PropertyRef Name="DogadjajId" />
+          </Key>
+          <Property Name="DogadjajId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="None" />
+          <Property Name="Mesto" Type="String" Nullable="false" MaxLength="Max" Unicode="true" FixedLength="false" />
+          <Property Name="Ulica" Type="String" Nullable="false" MaxLength="Max" Unicode="true" FixedLength="false" />
+          <Property Name="Broj" Type="Int32" Nullable="false" />
+          <Property Name="BrojMesta" Type="Int32" Nullable="false" />
+          <Property Name="Tip" Type="String" Nullable="false" MaxLength="Max" Unicode="true" FixedLength="false" />
+          <Property Name="Posveceno" Type="String" Nullable="false" MaxLength="Max" Unicode="true" FixedLength="false" />
+          <NavigationProperty Name="Pisacs" Relationship="ModelIzdavackaKuca.PisacDogadjaj" FromRole="Dogadjaj" ToRole="Pisac" />
+        </EntityType>
+        <EntityType Name="Nagrada">
+          <Key>
+            <PropertyRef Name="NagradaId" />
+          </Key>
+          <Property Name="NagradaId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="None" />
+          <Property Name="Naziv" Type="String" Nullable="false" MaxLength="Max" Unicode="true" FixedLength="false" />
+          <Property Name="NovcanaNagrada" Type="Int32" Nullable="false" />
+          <Property Name="Drzavna" Type="Boolean" Nullable="false" />
+          <NavigationProperty Name="Izdajes" Relationship="ModelIzdavackaKuca.IzdajeNagrada" FromRole="Nagrada" ToRole="Izdaje" />
+        </EntityType>
+        <EntityType Name="Recenzija">
+          <Key>
+            <PropertyRef Name="RecenzijaId" />
+          </Key>
+          <Property Name="RecenzijaId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="None" />
+          <Property Name="Ocena" Type="Int32" Nullable="false" />
+          <Property Name="BrojStrana" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="Knjiga" Relationship="ModelIzdavackaKuca.KnjigaRecenzija" FromRole="Recenzija" ToRole="Knjiga" />
+          <Property Name="KnjigaKnjigaId" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="Kriticar" Relationship="ModelIzdavackaKuca.KriticarRecenzija" FromRole="Recenzija" ToRole="Kriticar" />
+        </EntityType>
+        <EntityType Name="Knjiga">
+          <Key>
+            <PropertyRef Name="KnjigaId" />
+          </Key>
+          <Property Name="KnjigaId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="None" />
+          <Property Name="BrojPoglavlja" Type="Int32" Nullable="false" />
+          <Property Name="BrojStrana" Type="Int32" Nullable="false" />
+          <Property Name="Naziv" Type="String" Nullable="false" MaxLength="Max" Unicode="true" FixedLength="false" />
+          <NavigationProperty Name="Kategorijas" Relationship="ModelIzdavackaKuca.KnjigaKategorija" FromRole="Knjiga" ToRole="Kategorija" />
+          <NavigationProperty Name="Recenzijas" Relationship="ModelIzdavackaKuca.KnjigaRecenzija" FromRole="Knjiga" ToRole="Recenzija" />
+          <NavigationProperty Name="Pisacs" Relationship="ModelIzdavackaKuca.PisacKnjiga" FromRole="Knjiga" ToRole="Pisac" />
+          <NavigationProperty Name="Izdajes" Relationship="ModelIzdavackaKuca.KnjigaIzdaje" FromRole="Knjiga" ToRole="Izdaje" />
+        </EntityType>
+        <EntityType Name="Kategorija">
+          <Key>
+            <PropertyRef Name="KategorijaId" />
+          </Key>
+          <Property Name="KategorijaId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="None" />
+          <Property Name="Naziv" Type="String" Nullable="false" MaxLength="Max" Unicode="true" FixedLength="false" />
+          <Property Name="KnjizevniRod" Type="String" Nullable="false" MaxLength="Max" Unicode="true" FixedLength="false" />
+          <NavigationProperty Name="Knjigas" Relationship="ModelIzdavackaKuca.KnjigaKategorija" FromRole="Kategorija" ToRole="Knjiga" />
+        </EntityType>
+        <EntityType Name="Knjizara">
+          <Key>
+            <PropertyRef Name="KnjizaraId" />
+          </Key>
+          <Property Name="KnjizaraId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="None" />
+          <Property Name="Naziv" Type="String" Nullable="false" MaxLength="Max" Unicode="true" FixedLength="false" />
+          <Property Name="Mesto" Type="String" Nullable="false" MaxLength="Max" Unicode="true" FixedLength="false" />
+          <Property Name="Ulica" Type="String" Nullable="false" MaxLength="Max" Unicode="true" FixedLength="false" />
+          <Property Name="Broj" Type="Int32" Nullable="false" />
+          <Property Name="Telefon" Type="String" Nullable="false" MaxLength="Max" Unicode="true" FixedLength="false" />
+          <Property Name="Pib" Type="String" Nullable="false" MaxLength="Max" Unicode="true" FixedLength="false" />
+          <NavigationProperty Name="Izdajes" Relationship="ModelIzdavackaKuca.KnjizaraIzdaje" FromRole="Knjizara" ToRole="Izdaje" />
+        </EntityType>
+        <Association Name="KnjigaKategorija">
+          <End Type="ModelIzdavackaKuca.Knjiga" Role="Knjiga" Multiplicity="*" />
+          <End Type="ModelIzdavackaKuca.Kategorija" Role="Kategorija" Multiplicity="*" />
+        </Association>
+        <EntityType Name="Radnik">
+          <Key>
+            <PropertyRef Name="Jmbg" />
+          </Key>
+          <Property Name="Jmbg" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="None" />
+          <Property Name="Ime" Type="String" Nullable="false" MaxLength="Max" Unicode="true" FixedLength="false" />
+          <Property Name="Prezime" Type="String" Nullable="false" MaxLength="Max" Unicode="true" FixedLength="false" />
+          <Property Name="Plata" Type="Int32" Nullable="false" />
+          <Property Name="Mesto" Type="String" Nullable="false" MaxLength="Max" Unicode="true" FixedLength="false" />
+          <Property Name="Ulica" Type="String" Nullable="false" MaxLength="Max" Unicode="true" FixedLength="false" />
+          <Property Name="Broj" Type="Int32" Nullable="false" />
+          <Property Name="Telefon" Type="String" Nullable="false" MaxLength="Max" Unicode="true" FixedLength="false" />
+          <NavigationProperty Name="Odeljenje" Relationship="ModelIzdavackaKuca.OdeljenjeRadnik" FromRole="Radnik" ToRole="Odeljenje" />
+          <Property Name="OdeljenjeOdeljenjeId" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="Pisac" Relationship="ModelIzdavackaKuca.PisacRadnik" FromRole="Radnik" ToRole="Pisac" />
+          <NavigationProperty Name="Kriticar" Relationship="ModelIzdavackaKuca.KriticarRadnik" FromRole="Radnik" ToRole="Kriticar" />
+        </EntityType>
+        <Association Name="OdeljenjeRadnik">
+          <End Type="ModelIzdavackaKuca.Odeljenje" Role="Odeljenje" Multiplicity="1" />
+          <End Type="ModelIzdavackaKuca.Radnik" Role="Radnik" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Odeljenje">
+              <PropertyRef Name="OdeljenjeId" />
+            </Principal>
+            <Dependent Role="Radnik">
+              <PropertyRef Name="OdeljenjeOdeljenjeId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="KnjigaRecenzija">
+          <End Type="ModelIzdavackaKuca.Knjiga" Role="Knjiga" Multiplicity="1" />
+          <End Type="ModelIzdavackaKuca.Recenzija" Role="Recenzija" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Knjiga">
+              <PropertyRef Name="KnjigaId" />
+            </Principal>
+            <Dependent Role="Recenzija">
+              <PropertyRef Name="KnjigaKnjigaId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityType Name="Izdaje" >
+          <Key>
+            <PropertyRef Name="KnjigaKnjigaId" />
+            <PropertyRef Name="OdeljenjeOdeljenjeId" />
+          </Key>
+          <Property Name="KnjigaKnjigaId" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="Odeljenje" Relationship="ModelIzdavackaKuca.OdeljenjeIzdaje" FromRole="Izdaje" ToRole="Odeljenje" />
+          <Property Name="OdeljenjeOdeljenjeId" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="Nagradas" Relationship="ModelIzdavackaKuca.IzdajeNagrada" FromRole="Izdaje" ToRole="Nagrada" />
+          <NavigationProperty Name="Knjizaras" Relationship="ModelIzdavackaKuca.KnjizaraIzdaje" FromRole="Izdaje" ToRole="Knjizara" />
+          <NavigationProperty Name="Knjiga" Relationship="ModelIzdavackaKuca.KnjigaIzdaje" FromRole="Izdaje" ToRole="Knjiga" />
+        </EntityType>
+        <Association Name="OdeljenjeIzdaje">
+          <End Type="ModelIzdavackaKuca.Odeljenje" Role="Odeljenje" Multiplicity="1" />
+          <End Type="ModelIzdavackaKuca.Izdaje" Role="Izdaje" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Odeljenje">
+              <PropertyRef Name="OdeljenjeId" />
+            </Principal>
+            <Dependent Role="Izdaje">
+              <PropertyRef Name="OdeljenjeOdeljenjeId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="IzdajeNagrada">
+          <End Type="ModelIzdavackaKuca.Izdaje" Role="Izdaje" Multiplicity="*" />
+          <End Type="ModelIzdavackaKuca.Nagrada" Role="Nagrada" Multiplicity="*" />
+        </Association>
+        <Association Name="KnjizaraIzdaje">
+          <End Type="ModelIzdavackaKuca.Knjizara" Role="Knjizara" Multiplicity="*" />
+          <End Type="ModelIzdavackaKuca.Izdaje" Role="Izdaje" Multiplicity="*" />
+        </Association>
+        <EntityType Name="Pisac" >
+          <Key>
+            <PropertyRef Name="Jmbg" />
+          </Key>
+          <NavigationProperty Name="Radnik" Relationship="ModelIzdavackaKuca.PisacRadnik" FromRole="Pisac" ToRole="Radnik" />
+          <NavigationProperty Name="Knjigas" Relationship="ModelIzdavackaKuca.PisacKnjiga" FromRole="Pisac" ToRole="Knjiga" />
+          <NavigationProperty Name="Dogadjajs" Relationship="ModelIzdavackaKuca.PisacDogadjaj" FromRole="Pisac" ToRole="Dogadjaj" />
+          <Property Name="Jmbg" Type="Int64" Nullable="false" />
+        </EntityType>
+        <Association Name="PisacRadnik">
+          <End Type="ModelIzdavackaKuca.Pisac" Role="Pisac" Multiplicity="1" />
+          <End Type="ModelIzdavackaKuca.Radnik" Role="Radnik" Multiplicity="1" />
+          <ReferentialConstraint>
+            <Principal Role="Radnik">
+              <PropertyRef Name="Jmbg" />
+            </Principal>
+            <Dependent Role="Pisac">
+              <PropertyRef Name="Jmbg" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="PisacKnjiga">
+          <End Type="ModelIzdavackaKuca.Pisac" Role="Pisac" Multiplicity="*" />
+          <End Type="ModelIzdavackaKuca.Knjiga" Role="Knjiga" Multiplicity="*" />
+        </Association>
+        <Association Name="KnjigaIzdaje">
+          <End Type="ModelIzdavackaKuca.Knjiga" Role="Knjiga" Multiplicity="1" />
+          <End Type="ModelIzdavackaKuca.Izdaje" Role="Izdaje" Multiplicity="*" />
+        </Association>
+        <EntityType Name="Kriticar" >
+          <Key>
+            <PropertyRef Name="Jmbg" />
+          </Key>
+          <NavigationProperty Name="Radnik" Relationship="ModelIzdavackaKuca.KriticarRadnik" FromRole="Kriticar" ToRole="Radnik" />
+          <NavigationProperty Name="Recenzijas" Relationship="ModelIzdavackaKuca.KriticarRecenzija" FromRole="Kriticar" ToRole="Recenzija" />
+          <Property Name="Jmbg" Type="Int64" Nullable="false" />
+        </EntityType>
+        <Association Name="KriticarRadnik">
+          <End Type="ModelIzdavackaKuca.Kriticar" Role="Kriticar" Multiplicity="1" />
+          <End Type="ModelIzdavackaKuca.Radnik" Role="Radnik" Multiplicity="1" />
+          <ReferentialConstraint>
+            <Principal Role="Radnik">
+              <PropertyRef Name="Jmbg" />
+            </Principal>
+            <Dependent Role="Kriticar">
+              <PropertyRef Name="Jmbg" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="PisacDogadjaj">
+          <End Type="ModelIzdavackaKuca.Pisac" Role="Pisac" Multiplicity="*" />
+          <End Type="ModelIzdavackaKuca.Dogadjaj" Role="Dogadjaj" Multiplicity="*" />
+        </Association>
+        <Association Name="KriticarRecenzija">
+          <End Type="ModelIzdavackaKuca.Kriticar" Role="Kriticar" Multiplicity="1" />
+          <End Type="ModelIzdavackaKuca.Recenzija" Role="Recenzija" Multiplicity="*" />
+        </Association>
+        <ComplexType Name="Funkcija1_Result">
+          <Property Type="Decimal" Name="id" Nullable="true" Precision="18" Scale="0" />
+          <Property Type="String" Name="naziv" Nullable="true" MaxLength="30" />
+        </ComplexType>
+        <ComplexType Name="Funkcija5_Result">
+          <Property Type="Decimal" Name="id" Nullable="true" Precision="18" Scale="0" />
+          <Property Type="String" Name="naziv" Nullable="true" MaxLength="30" />
+        </ComplexType>
+        <ComplexType Name="Funkcija9_Result">
+          <Property Type="Decimal" Name="id" Nullable="true" Precision="18" Scale="0" />
+          <Property Type="String" Name="naziv" Nullable="true" MaxLength="30" />
+        </ComplexType>
+        <EntityType Name="Korisnik">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Username" Type="String" Nullable="false" />
+          <Property Name="Password" Type="String" Nullable="false" />
+        </EntityType>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+    <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="ModelIzdavackaKucaStoreContainer" CdmEntityContainer="ModelIzdavackaKucaContainer">
+    <EntitySetMapping Name="Odeljenjes">
+      <EntityTypeMapping TypeName="IsTypeOf(ModelIzdavackaKuca.Odeljenje)">
+        <MappingFragment StoreEntitySet="Odeljenjes">
+          <ScalarProperty Name="OdeljenjeId" ColumnName="OdeljenjeId" />
+          <ScalarProperty Name="ImeOsnivaca" ColumnName="ImeOsnivaca" />
+          <ScalarProperty Name="PrezimeOsnivaca" ColumnName="PrezimeOsnivaca" />
+          <ScalarProperty Name="Naziv" ColumnName="Naziv" />
+          <ScalarProperty Name="Mesto" ColumnName="Mesto" />
+          <ScalarProperty Name="Ulica" ColumnName="Ulica" />
+          <ScalarProperty Name="Broj" ColumnName="Broj" />
+          <ScalarProperty Name="Telefon" ColumnName="Telefon" />
+          <ScalarProperty Name="Pib" ColumnName="Pib" />
+          <ScalarProperty Name="DatumOsnivanja" ColumnName="DatumOsnivanja" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Dogadjajs">
+      <EntityTypeMapping TypeName="IsTypeOf(ModelIzdavackaKuca.Dogadjaj)">
+        <MappingFragment StoreEntitySet="Dogadjajs">
+          <ScalarProperty Name="DogadjajId" ColumnName="DogadjajId" />
+          <ScalarProperty Name="Mesto" ColumnName="Mesto" />
+          <ScalarProperty Name="Ulica" ColumnName="Ulica" />
+          <ScalarProperty Name="Broj" ColumnName="Broj" />
+          <ScalarProperty Name="BrojMesta" ColumnName="BrojMesta" />
+          <ScalarProperty Name="Tip" ColumnName="Tip" />
+          <ScalarProperty Name="Posveceno" ColumnName="Posveceno" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Nagradas">
+      <EntityTypeMapping TypeName="IsTypeOf(ModelIzdavackaKuca.Nagrada)">
+        <MappingFragment StoreEntitySet="Nagradas">
+          <ScalarProperty Name="NagradaId" ColumnName="NagradaId" />
+          <ScalarProperty Name="Naziv" ColumnName="Naziv" />
+          <ScalarProperty Name="NovcanaNagrada" ColumnName="NovcanaNagrada" />
+          <ScalarProperty Name="Drzavna" ColumnName="Drzavna" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Recenzijas">
+      <EntityTypeMapping TypeName="IsTypeOf(ModelIzdavackaKuca.Recenzija)">
+        <MappingFragment StoreEntitySet="Recenzijas">
+          <ScalarProperty Name="RecenzijaId" ColumnName="RecenzijaId" />
+          <ScalarProperty Name="Ocena" ColumnName="Ocena" />
+          <ScalarProperty Name="BrojStrana" ColumnName="BrojStrana" />
+          <ScalarProperty Name="KnjigaKnjigaId" ColumnName="KnjigaKnjigaId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Knjigas">
+      <EntityTypeMapping TypeName="IsTypeOf(ModelIzdavackaKuca.Knjiga)">
+        <MappingFragment StoreEntitySet="Knjigas">
+          <ScalarProperty Name="KnjigaId" ColumnName="KnjigaId" />
+          <ScalarProperty Name="BrojPoglavlja" ColumnName="BrojPoglavlja" />
+          <ScalarProperty Name="BrojStrana" ColumnName="BrojStrana" />
+          <ScalarProperty Name="Naziv" ColumnName="Naziv" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Kategorijas">
+      <EntityTypeMapping TypeName="IsTypeOf(ModelIzdavackaKuca.Kategorija)">
+        <MappingFragment StoreEntitySet="Kategorijas">
+          <ScalarProperty Name="KategorijaId" ColumnName="KategorijaId" />
+          <ScalarProperty Name="Naziv" ColumnName="Naziv" />
+          <ScalarProperty Name="KnjizevniRod" ColumnName="KnjizevniRod" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Knjizaras">
+      <EntityTypeMapping TypeName="IsTypeOf(ModelIzdavackaKuca.Knjizara)">
+        <MappingFragment StoreEntitySet="Knjizaras">
+          <ScalarProperty Name="KnjizaraId" ColumnName="KnjizaraId" />
+          <ScalarProperty Name="Naziv" ColumnName="Naziv" />
+          <ScalarProperty Name="Mesto" ColumnName="Mesto" />
+          <ScalarProperty Name="Ulica" ColumnName="Ulica" />
+          <ScalarProperty Name="Broj" ColumnName="Broj" />
+          <ScalarProperty Name="Telefon" ColumnName="Telefon" />
+          <ScalarProperty Name="Pib" ColumnName="Pib" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Radniks">
+      <EntityTypeMapping TypeName="IsTypeOf(ModelIzdavackaKuca.Radnik)">
+        <MappingFragment StoreEntitySet="Radniks">
+          <ScalarProperty Name="Jmbg" ColumnName="Jmbg" />
+          <ScalarProperty Name="Ime" ColumnName="Ime" />
+          <ScalarProperty Name="Prezime" ColumnName="Prezime" />
+          <ScalarProperty Name="Plata" ColumnName="Plata" />
+          <ScalarProperty Name="Mesto" ColumnName="Mesto" />
+          <ScalarProperty Name="Ulica" ColumnName="Ulica" />
+          <ScalarProperty Name="Broj" ColumnName="Broj" />
+          <ScalarProperty Name="Telefon" ColumnName="Telefon" />
+          <ScalarProperty Name="OdeljenjeOdeljenjeId" ColumnName="OdeljenjeOdeljenjeId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Izdajes">
+      <EntityTypeMapping TypeName="IsTypeOf(ModelIzdavackaKuca.Izdaje)">
+        <MappingFragment StoreEntitySet="Izdajes">
+          <ScalarProperty Name="KnjigaKnjigaId" ColumnName="KnjigaKnjigaId" />
+          <ScalarProperty Name="OdeljenjeOdeljenjeId" ColumnName="OdeljenjeOdeljenjeId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Pisacs">
+      <EntityTypeMapping TypeName="IsTypeOf(ModelIzdavackaKuca.Pisac)">
+        <MappingFragment StoreEntitySet="Pisacs">
+          <ScalarProperty Name="Jmbg" ColumnName="Jmbg" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Kriticars">
+      <EntityTypeMapping TypeName="IsTypeOf(ModelIzdavackaKuca.Kriticar)">
+        <MappingFragment StoreEntitySet="Kriticars">
+          <ScalarProperty Name="Jmbg" ColumnName="Jmbg" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Korisniks">
+      <EntityTypeMapping TypeName="IsTypeOf(ModelIzdavackaKuca.Korisnik)">
+        <MappingFragment StoreEntitySet="Korisniks">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Username" ColumnName="Username" />
+          <ScalarProperty Name="Password" ColumnName="Password" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <AssociationSetMapping Name="KnjigaKategorija" TypeName="ModelIzdavackaKuca.KnjigaKategorija" StoreEntitySet="KnjigaKategorija">
+      <EndProperty Name="Knjiga">
+        <ScalarProperty Name="KnjigaId" ColumnName="Knjigas_KnjigaId" />
+      </EndProperty>
+      <EndProperty Name="Kategorija">
+        <ScalarProperty Name="KategorijaId" ColumnName="Kategorijas_KategorijaId" />
+      </EndProperty>
+    </AssociationSetMapping>
+    <AssociationSetMapping Name="IzdajeNagrada" TypeName="ModelIzdavackaKuca.IzdajeNagrada" StoreEntitySet="IzdajeNagrada">
+      <EndProperty Name="Izdaje">
+        <ScalarProperty Name="KnjigaKnjigaId" ColumnName="Izdajes_KnjigaKnjigaId" />
+        <ScalarProperty Name="OdeljenjeOdeljenjeId" ColumnName="Izdajes_OdeljenjeOdeljenjeId" />
+      </EndProperty>
+      <EndProperty Name="Nagrada">
+        <ScalarProperty Name="NagradaId" ColumnName="Nagradas_NagradaId" />
+      </EndProperty>
+    </AssociationSetMapping>
+    <AssociationSetMapping Name="KnjizaraIzdaje" TypeName="ModelIzdavackaKuca.KnjizaraIzdaje" StoreEntitySet="KnjizaraIzdaje">
+      <EndProperty Name="Knjizara">
+        <ScalarProperty Name="KnjizaraId" ColumnName="Knjizaras_KnjizaraId" />
+      </EndProperty>
+      <EndProperty Name="Izdaje">
+        <ScalarProperty Name="KnjigaKnjigaId" ColumnName="Izdajes_KnjigaKnjigaId" />
+        <ScalarProperty Name="OdeljenjeOdeljenjeId" ColumnName="Izdajes_OdeljenjeOdeljenjeId" />
+      </EndProperty>
+    </AssociationSetMapping>
+    <AssociationSetMapping Name="PisacKnjiga" TypeName="ModelIzdavackaKuca.PisacKnjiga" StoreEntitySet="PisacKnjiga">
+      <EndProperty Name="Pisac">
+        <ScalarProperty Name="Jmbg" ColumnName="Pisacs_Jmbg" />
+      </EndProperty>
+      <EndProperty Name="Knjiga">
+        <ScalarProperty Name="KnjigaId" ColumnName="Knjigas_KnjigaId" />
+      </EndProperty>
+    </AssociationSetMapping>
+    <AssociationSetMapping Name="KnjigaIzdaje" TypeName="ModelIzdavackaKuca.KnjigaIzdaje" StoreEntitySet="Izdajes">
+      <EndProperty Name="Knjiga">
+        <ScalarProperty Name="KnjigaId" ColumnName="Knjiga_KnjigaId" />
+      </EndProperty>
+      <EndProperty Name="Izdaje">
+        <ScalarProperty Name="KnjigaKnjigaId" ColumnName="KnjigaKnjigaId" />
+        <ScalarProperty Name="OdeljenjeOdeljenjeId" ColumnName="OdeljenjeOdeljenjeId" />
+      </EndProperty>
+    </AssociationSetMapping>
+    <AssociationSetMapping Name="PisacDogadjaj" TypeName="ModelIzdavackaKuca.PisacDogadjaj" StoreEntitySet="PisacDogadjaj">
+      <EndProperty Name="Pisac">
+        <ScalarProperty Name="Jmbg" ColumnName="Pisacs_Jmbg" />
+      </EndProperty>
+      <EndProperty Name="Dogadjaj">
+        <ScalarProperty Name="DogadjajId" ColumnName="Dogadjajs_DogadjajId" />
+      </EndProperty>
+    </AssociationSetMapping>
+    <AssociationSetMapping Name="KriticarRecenzija" TypeName="ModelIzdavackaKuca.KriticarRecenzija" StoreEntitySet="Recenzijas">
+      <EndProperty Name="Kriticar">
+        <ScalarProperty Name="Jmbg" ColumnName="Kriticar_Jmbg" />
+      </EndProperty>
+      <EndProperty Name="Recenzija">
+        <ScalarProperty Name="RecenzijaId" ColumnName="RecenzijaId" />
+      </EndProperty>
+    </AssociationSetMapping>
+  </EntityContainerMapping>
+</Mapping></edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <edmx:Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </edmx:Connection>
+    <edmx:Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="True" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+        <DesignerProperty Name="UseLegacyProvider" Value="False" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="True" />
+      </DesignerInfoPropertySet>
+    </edmx:Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

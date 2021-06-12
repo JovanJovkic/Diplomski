@@ -1,0 +1,44 @@
+﻿<Window x:Class="IzdavackaKucaUI.View.DogadjajWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        mc:Ignorable="d" Background="BlanchedAlmond"
+        Title="DogadjajWindow" Height="503.025" Width="800">
+    <Grid>
+        <Grid.Background>
+            <LinearGradientBrush EndPoint="0.5,1" MappingMode="RelativeToBoundingBox" StartPoint="0.5,0">
+                <GradientStop Color="#FF176880" Offset="1"/>
+                <GradientStop Color="#FF19C0F3"/>
+            </LinearGradientBrush>
+        </Grid.Background>
+
+        <Button Content="Izađi" HorizontalAlignment="Left" Margin="318,413,0,0" VerticalAlignment="Top" Width="110" Height="36"  Command="{Binding ExitCommand}" Background="#FFDDD6D6"/>
+        <Button Content="Dodaj" HorizontalAlignment="Left" Height="36" Margin="138,356,0,0" VerticalAlignment="Top" Width="110" Command="{Binding AddCommand}" Background="#FFDDD6D6"/>
+        <Button Content="Obriši" HorizontalAlignment="Left" Height="36" Margin="318,356,0,0" VerticalAlignment="Top" Width="110" Command="{Binding RemoveCommand}" Background="#FFDDD6D6"/>
+        <Button Content="Izmeni" HorizontalAlignment="Left" Height="36" Margin="512,356,0,0" VerticalAlignment="Top" Width="110" Command="{Binding EditCommand}" Background="#FFDDD6D6"/>
+        
+        <DataGrid SelectedItem="{Binding SelektovanDogadjaj, UpdateSourceTrigger=PropertyChanged}"
+                  ItemsSource="{Binding SviDogadjaji, Mode=TwoWay,NotifyOnSourceUpdated=True, UpdateSourceTrigger=PropertyChanged}" SelectionMode="Single"
+                  HorizontalAlignment="Left" Height="252" Margin="26,78,0,0" VerticalAlignment="Top" Width="738" IsReadOnly="True" AutoGenerateColumns="False" HorizontalGridLinesBrush="Black" HeadersVisibility="Column" AlternatingRowBackground="#FFAB9E9E" RowBackground="#FFDDD6D6">
+            <DataGrid.Background>
+                <LinearGradientBrush EndPoint="0.5,1" MappingMode="RelativeToBoundingBox" StartPoint="0.5,0">
+                    <GradientStop Color="#FFEEEAEA" Offset="1"/>
+                    <GradientStop Color="#FF5D6C6C"/>
+                </LinearGradientBrush>
+            </DataGrid.Background>
+            <DataGrid.Columns>
+                <DataGridTextColumn Width="60" Header="Id" Binding="{Binding DogadjajId}"  />
+                <DataGridTextColumn Width="*" Header="Mesto" Binding="{Binding Mesto}" />
+                <DataGridTextColumn Width="*" Header="Ulica" Binding="{Binding Ulica}" />
+                <DataGridTextColumn Width="60" Header="Broj" Binding="{Binding Broj}" />
+                <DataGridTextColumn Width="70" Header="Broj mesta" Binding="{Binding BrojMesta}" />
+                <DataGridTextColumn Width="*" Header="Tip" Binding="{Binding Tip}" />
+                <DataGridTextColumn Width="*" Header="Posvećeno" Binding="{Binding Posveceno}" />
+            </DataGrid.Columns>
+        </DataGrid>
+
+        <Label Foreground="#FF565252" Content="Dogadjaji" FontSize="30" HorizontalAlignment="Left" Height="54" Margin="285,10,0,0" VerticalAlignment="Top" Width="220" RenderTransformOrigin="1.175,0.787" FontFamily="Lucida Calligraphy" FontWeight="Bold"/>
+
+    </Grid>
+</Window>

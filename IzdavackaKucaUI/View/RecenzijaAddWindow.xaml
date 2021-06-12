@@ -1,0 +1,45 @@
+﻿<Window x:Class="IzdavackaKucaUI.View.RecenzijaAddWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:IzdavackaKucaUI.View"
+        mc:Ignorable="d" Background="WhiteSmoke"
+        Title="Dodaj recenziju" Height="397.946" Width="335.567">
+    <Grid  HorizontalAlignment="Left" Width="336" Margin="0,0,-7.2,-19.6">
+        <Grid.Background>
+            <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                <GradientStop Color="#FF4358CD" Offset="1"/>
+                <GradientStop Color="#FF6DDAF4"/>
+            </LinearGradientBrush>
+        </Grid.Background>
+        <Label Content="ID" FontSize="13" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="32,62,0,0" Height="25" Width="117"/>
+        <Label Content="Ocena" FontSize="13"  HorizontalAlignment="Left" VerticalAlignment="Top" Margin="32,110,0,0" Height="25" Width="117"/>
+        <Label Content="Broj strana" FontSize="13"  HorizontalAlignment="Left" VerticalAlignment="Top" Margin="32,158,0,0" Height="25" Width="117"/>
+        <Label Content="Knjiga" FontSize="13"  HorizontalAlignment="Left" VerticalAlignment="Top" Margin="32,206,0,0" Height="25" Width="117"/>
+        <Label Content="Kritičar" FontSize="13"  HorizontalAlignment="Left" VerticalAlignment="Top" Margin="32,254,0,0" Height="25" Width="117"/>
+
+        <TextBox VerticalContentAlignment="Center" Text="{Binding Recenzija.Recenzija.RecenzijaId, UpdateSourceTrigger=PropertyChanged}" IsReadOnly="{Binding DaLiJeIzmena}" HorizontalAlignment="Left" Height="25" Margin="112,62,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="170"/>
+        <TextBox VerticalContentAlignment="Center" Text="{Binding Recenzija.Recenzija.Ocena, UpdateSourceTrigger=PropertyChanged}" HorizontalAlignment="Left" Height="25" Margin="112,110,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="170"/>
+        <TextBox VerticalContentAlignment="Center" Text="{Binding Recenzija.Recenzija.BrojStrana, UpdateSourceTrigger=PropertyChanged}" HorizontalAlignment="Left" Height="25" Margin="112,158,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="170"/>
+        <ComboBox VerticalContentAlignment="Center" HorizontalAlignment="Left" Height="25" Margin="111,206,0,0" VerticalAlignment="Top" Width="170"
+            ItemsSource="{Binding SpisakKnjiga, UpdateSourceTrigger=PropertyChanged}"
+            SelectedValue="{Binding IzabranaKnjiga, UpdateSourceTrigger=PropertyChanged}"/>
+        <ComboBox VerticalContentAlignment="Center" HorizontalAlignment="Left" Height="25" Margin="111,254,0,0" VerticalAlignment="Top" Width="170"
+            ItemsSource="{Binding SpisakKriticara, UpdateSourceTrigger=PropertyChanged}"
+            SelectedValue="{Binding IzabranKriticar, UpdateSourceTrigger=PropertyChanged}"/>
+
+        <Button Content="Dodaj" FontSize="18"  HorizontalAlignment="Left" Height="35" Margin="32,313,0,0" VerticalAlignment="Top" Width="103" Command="{Binding AddCommand}" Background="#FFDDD6D6" RenderTransformOrigin="0.217,0.861"/>
+        <Button Content="Odustani" FontSize="18" HorizontalAlignment="Left" Height="35" Margin="179,313,0,0" VerticalAlignment="Top" Width="103" Command="{Binding ExitCommand}" Background="#FFDDD6D6"/>
+
+        <Label Content="{Binding Recenzija.ValidationErrors[Id]}" Foreground="Red" FontSize="10" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="111,85,0,0" Height="23" Width="193"/>
+        <Label Content="{Binding Recenzija.ValidationErrors[Ocena]}" Foreground="Red" FontSize="10" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="111,133,0,0" Height="23" Width="193"/>
+        <Label Content="{Binding Recenzija.ValidationErrors[BrojStrana]}" Foreground="Red" FontSize="10" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="111,181,0,0" Height="23" Width="193"/>
+        <Label Content="{Binding IzabranaKnjigaGreska}" Foreground="Red" FontSize="10" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="111,229,0,0" Height="23" Width="193"/>
+        <Label Content="{Binding IzabranKriticarGreska}" Foreground="Red" FontSize="10" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="111,277,0,0" Height="23" Width="193"/>
+        <Label Foreground="#FFE05555" Content="Nova recenzija" FontSize="24" HorizontalAlignment="Left" Height="48" Margin="50,10,-24,0" VerticalAlignment="Top" Width="310" RenderTransformOrigin="1.175,0.787" FontFamily="Lucida Calligraphy" FontWeight="Bold"/>
+
+
+
+    </Grid>
+</Window>

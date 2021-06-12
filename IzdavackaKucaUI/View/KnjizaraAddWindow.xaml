@@ -1,0 +1,45 @@
+﻿<Window x:Class="IzdavackaKucaUI.View.KnjizaraAddWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:IzdavackaKucaUI.View"
+        mc:Ignorable="d" Background="WhiteSmoke"
+        Title="Dodaj knjizaru" Height="502.348" Width="324.002">
+    <Grid HorizontalAlignment="Left" Width="314" Margin="0,0,0,-4.2">
+        <Grid.Background>
+            <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                <GradientStop Color="#FF4358CD" Offset="1"/>
+                <GradientStop Color="#FF6DDAF4"/>
+            </LinearGradientBrush>
+        </Grid.Background>
+        <Label Content="ID" FontSize="13" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="31,70,0,0" Height="25" Width="110"/>
+        <Label Content="Naziv" FontSize="13"  HorizontalAlignment="Left" VerticalAlignment="Top" Margin="31,118,0,0" Height="25" Width="110"/>
+        <Label Content="Ulica" FontSize="13"  HorizontalAlignment="Left" VerticalAlignment="Top" Margin="31,166,0,0" Height="25" Width="110"/>
+        <Label Content="Broj" FontSize="13"  HorizontalAlignment="Left" VerticalAlignment="Top" Margin="31,214,0,0" Height="25" Width="110"/>
+        <Label Content="Mesto" FontSize="13" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="31,262,0,0" Height="25" Width="110"/>
+        <Label Content="Telefon" FontSize="13" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="31,310,0,0" Height="25" Width="110"/>
+        <Label Content="Pib" FontSize="13"  HorizontalAlignment="Left" VerticalAlignment="Top" Margin="31,358,0,0" Height="25" Width="110"/>
+
+        <TextBox VerticalContentAlignment="Center" Text="{Binding Knjizara.Knjizara.KnjizaraId, UpdateSourceTrigger=PropertyChanged}" IsReadOnly="{Binding DaLiJeIzmena}" HorizontalAlignment="Left" Height="25" Margin="97,72,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="170"/>
+        <TextBox VerticalContentAlignment="Center" Text="{Binding Knjizara.Knjizara.Naziv, UpdateSourceTrigger=PropertyChanged}" HorizontalAlignment="Left" Height="25" Margin="97,120,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="170"/>
+        <TextBox VerticalContentAlignment="Center" Text="{Binding Knjizara.Knjizara.Ulica, UpdateSourceTrigger=PropertyChanged}" HorizontalAlignment="Left" Height="25" Margin="97,168,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="170"/>
+        <TextBox VerticalContentAlignment="Center" Text="{Binding Knjizara.Knjizara.Broj, UpdateSourceTrigger=PropertyChanged}" HorizontalAlignment="Left" Height="25" Margin="97,216,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="170"/>
+        <TextBox VerticalContentAlignment="Center" Text="{Binding Knjizara.Knjizara.Mesto, UpdateSourceTrigger=PropertyChanged}" HorizontalAlignment="Left" Height="25" Margin="97,264,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="170"/>
+        <TextBox VerticalContentAlignment="Center" Text="{Binding Knjizara.Knjizara.Telefon, UpdateSourceTrigger=PropertyChanged}" HorizontalAlignment="Left" Height="25" Margin="97,312,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="170"/>
+        <TextBox VerticalContentAlignment="Center" Text="{Binding Knjizara.Knjizara.Pib, UpdateSourceTrigger=PropertyChanged}" HorizontalAlignment="Left" Height="25" Margin="97,360,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="170"/>
+
+        <Button Content="Dodaj" FontSize="18"  HorizontalAlignment="Left" Height="35" Margin="33,408,0,0" VerticalAlignment="Top" Width="103" Command="{Binding AddCommand}" Background="#FFDDD6D6"/>
+        <Button Content="Odustani" FontSize="18" HorizontalAlignment="Left" Height="35" Margin="164,411,0,0" VerticalAlignment="Top" Width="103" Command="{Binding ExitCommand}" Background="#FFDDD6D6"/>
+
+        <Label Content="{Binding Knjizara.ValidationErrors[Id]}" Foreground="Red" FontSize="10" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="97,95,0,0" Height="23" Width="193"/>
+        <Label Content="{Binding Knjizara.ValidationErrors[Naziv]}" Foreground="Red" FontSize="10" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="97,143,0,0" Height="23" Width="193"/>
+        <Label Content="{Binding Knjizara.ValidationErrors[Ulica]}" Foreground="Red" FontSize="10" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="97,191,0,0" Height="23" Width="193"/>
+        <Label Content="{Binding Knjizara.ValidationErrors[Broj]}" Foreground="Red" FontSize="10" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="97,239,0,0" Height="23" Width="193"/>
+        <Label Content="{Binding Knjizara.ValidationErrors[Mesto]}" Foreground="Red" FontSize="10" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="97,287,0,0" Height="23" Width="193"/>
+        <Label Content="{Binding Knjizara.ValidationErrors[Telefon]}" Foreground="Red" FontSize="10" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="97,335,0,0" Height="23" Width="193"/>
+        <Label Content="{Binding Knjizara.ValidationErrors[Pib]}" Foreground="Red" FontSize="10" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="97,383,0,0" Height="23" Width="193"/>
+        <Label Foreground="#FFE05555" Content="Nova knjižara" FontSize="24" HorizontalAlignment="Left" Height="39" Margin="46,10,0,0" VerticalAlignment="Top" Width="310" RenderTransformOrigin="1.175,0.787" FontFamily="Lucida Calligraphy" FontWeight="Bold"/>
+
+    </Grid>
+</Window>

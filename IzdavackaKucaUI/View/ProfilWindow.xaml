@@ -1,0 +1,30 @@
+﻿<Window x:Class="IzdavackaKucaUI.View.ProfilWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+         xmlns:w="clr-namespace:IzdavackaKucaUI.Model"
+        xmlns:local="clr-namespace:IzdavackaKucaUI.View"
+        mc:Ignorable="d"
+        Title="ProfilWindow" Height="418.441" Width="303.761"
+    FocusManager.FocusedElement="{Binding ElementName=UsernameTextBox}">
+    <Grid Margin="0,0,-6.4,-4.2" HorizontalAlignment="Left" Width="304">
+        <Grid.Background>
+            <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                <GradientStop Color="#FF4358CD" Offset="1"/>
+                <GradientStop Color="#FF6DDAF4"/>
+            </LinearGradientBrush>
+        </Grid.Background>
+        <TextBox VerticalContentAlignment="Center" IsReadOnly="True" Name="UsernameTextBox" HorizontalAlignment="Left" Height="23" Margin="144,102,0,0" TextWrapping="Wrap" Text="{Binding Username, UpdateSourceTrigger=PropertyChanged}" VerticalAlignment="Top" Width="120"/>
+        <Label  FontSize="15"  x:Name="label" Content="Username" HorizontalAlignment="Left" Margin="21,94,0,0" VerticalAlignment="Top"/>
+        <Label  FontSize="15"  x:Name="label1" Content="Stara lozinka" HorizontalAlignment="Left" Margin="21,152,0,0" VerticalAlignment="Top"/>
+        <Button Background="#FFDDD6D6" FontSize="15" Command="{Binding PromenaLozinkeCommand}" Content="Promenite lozinku" HorizontalAlignment="Left" Height="40" Margin="73,327,0,0" VerticalAlignment="Top" Width="154" RenderTransformOrigin="0.478,-0.5"/>
+        <PasswordBox VerticalContentAlignment="Center" w:PasswordBoxMVVMAttachedProperties.EncryptedPassword="{Binding PasswordSecureString, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" PasswordChanged="PasswordBox_PasswordChanged" HorizontalAlignment="Left" Height="25" Margin="144,157,0,0" VerticalAlignment="Top" Width="120" RenderTransformOrigin="0.019,-1.072"/>
+        <Label  FontSize="15"  x:Name="label1_Copy" Content="Nova lozinka" HorizontalAlignment="Left" Margin="21,206,0,0" VerticalAlignment="Top"/>
+        <PasswordBox VerticalContentAlignment="Center" w:PasswordBoxMVVMAttachedProperties.EncryptedPassword="{Binding PasswordSecureString2, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" PasswordChanged="PasswordBox_PasswordChanged" HorizontalAlignment="Left" Height="25" Margin="144,211,0,0" VerticalAlignment="Top" Width="120" RenderTransformOrigin="0.019,-1.072"/>
+        <Label Content="{Binding Greska}" Foreground="Red" FontSize="14" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="21,291,0,0" Height="36" Width="243"/>
+        <Label  FontSize="15"  x:Name="label1_Copy1" Content="Ponovite lozinku" HorizontalAlignment="Left" Margin="21,256,0,0" VerticalAlignment="Top"/>
+        <PasswordBox VerticalContentAlignment="Center" w:PasswordBoxMVVMAttachedProperties.EncryptedPassword="{Binding PasswordSecureString3, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" PasswordChanged="PasswordBox_PasswordChanged" HorizontalAlignment="Left" Height="25" Margin="144,261,0,0" VerticalAlignment="Top" Width="120" RenderTransformOrigin="0.019,-1.072"/>
+        <Label Foreground="#FFE05555" Content="Profil korisnika" FontSize="30" HorizontalAlignment="Left" Height="54" Margin="21,23,0,0" VerticalAlignment="Top" Width="270" RenderTransformOrigin="1.175,0.787" FontFamily="Lucida Calligraphy" FontWeight="Bold"/>
+    </Grid>
+</Window>

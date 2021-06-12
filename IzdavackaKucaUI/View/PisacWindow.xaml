@@ -1,0 +1,46 @@
+﻿<Window x:Class="IzdavackaKucaUI.View.PisacWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:IzdavackaKucaUI.View"
+        mc:Ignorable="d" Background="BlanchedAlmond"
+        Title="PisacWindow" Height="503.025" Width="800">
+    <Grid>
+        <Grid.Background>
+            <LinearGradientBrush EndPoint="0.5,1" MappingMode="RelativeToBoundingBox" StartPoint="0.5,0">
+                <GradientStop Color="#FF176880" Offset="1"/>
+                <GradientStop Color="#FF19C0F3"/>
+            </LinearGradientBrush>
+        </Grid.Background>
+
+        <Button Content="Izađi" HorizontalAlignment="Left" Margin="318,413,0,0" VerticalAlignment="Top" Width="110" Height="36"  Command="{Binding ExitCommand}" Background="#FFDDD6D6"/>
+        <Button Content="Dodaj" HorizontalAlignment="Left" Height="36" Margin="138,356,0,0" VerticalAlignment="Top" Width="110" Command="{Binding AddCommand}" Background="#FFDDD6D6"/>
+        <Button Content="Obriši" HorizontalAlignment="Left" Height="36" Margin="318,356,0,0" VerticalAlignment="Top" Width="110" Command="{Binding RemoveCommand}" Background="#FFDDD6D6"/>
+        <Button Content="Izmeni" HorizontalAlignment="Left" Height="36" Margin="512,356,0,0" VerticalAlignment="Top" Width="110" Command="{Binding EditCommand}" Background="#FFDDD6D6"/>
+        
+        <DataGrid ColumnWidth='*' SelectedItem="{Binding SelektovanPisac, UpdateSourceTrigger=PropertyChanged}"
+                  ItemsSource="{Binding SviPisci, Mode=TwoWay,NotifyOnSourceUpdated=True, UpdateSourceTrigger=PropertyChanged}"  SelectionMode="Single"
+                   HorizontalAlignment="Left" Height="252" Margin="26,78,0,0" VerticalAlignment="Top" Width="738" IsReadOnly="True" AutoGenerateColumns="False" HorizontalGridLinesBrush="Black" HeadersVisibility="Column" AlternatingRowBackground="#FFAB9E9E" RowBackground="#FFDDD6D6">
+            <DataGrid.Background>
+                <LinearGradientBrush EndPoint="0.5,1" MappingMode="RelativeToBoundingBox" StartPoint="0.5,0">
+                    <GradientStop Color="#FFEEEAEA" Offset="1"/>
+                    <GradientStop Color="#FF5D6C6C"/>
+                </LinearGradientBrush>
+            </DataGrid.Background>
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="Jmbg" Binding="{Binding Jmbg}" />
+                <DataGridTextColumn Header="Ime" Binding="{Binding RadnikObjekat.Ime}" />
+                <DataGridTextColumn Header="Prezime" Binding="{Binding RadnikObjekat.Prezime}" />
+                <DataGridTextColumn Header="Plata" Binding="{Binding RadnikObjekat.Plata}" />
+                <DataGridTextColumn Header="Mesto" Binding="{Binding RadnikObjekat.Mesto}" />
+                <DataGridTextColumn Header="Ulica" Binding="{Binding RadnikObjekat.Ulica}" />
+                <DataGridTextColumn Header="Broj" Binding="{Binding RadnikObjekat.Broj}" />
+                <DataGridTextColumn Header="Odeljenje Id" Binding="{Binding RadnikObjekat.OdeljenjeOdeljenjeId}" />
+            </DataGrid.Columns>
+        </DataGrid>
+
+        <Label Foreground="#FF565252" Content="Pisci" FontSize="30" HorizontalAlignment="Left" Height="54" Margin="285,10,0,0" VerticalAlignment="Top" Width="220" RenderTransformOrigin="1.175,0.787" FontFamily="Lucida Calligraphy" FontWeight="Bold"/>
+
+    </Grid>
+</Window>

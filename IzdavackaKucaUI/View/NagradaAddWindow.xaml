@@ -1,0 +1,36 @@
+﻿<Window x:Class="IzdavackaKucaUI.View.NagradaAddWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:IzdavackaKucaUI.View"
+        mc:Ignorable="d" Background="WhiteSmoke"
+        Title="Dodaj nagradu" Height="350.479" Width="351.891">
+    <Grid HorizontalAlignment="Left" Width="342" Margin="0,0,0,-7.4">
+        <Grid.Background>
+            <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                <GradientStop Color="#FF4358CD" Offset="1"/>
+                <GradientStop Color="#FF6DDAF4"/>
+            </LinearGradientBrush>
+        </Grid.Background>
+        <Label Content="ID" FontSize="13" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="30,63,0,0" Height="25" Width="120"/>
+        <Label Content="Naziv" FontSize="13"  HorizontalAlignment="Left" VerticalAlignment="Top" Margin="30,111,0,0" Height="25" Width="120"/>
+        <Label Content="Novčani iznos" FontSize="13"  HorizontalAlignment="Left" VerticalAlignment="Top" Margin="30,159,0,0" Height="25" Width="120"/>
+        <Label Content="Drzavna" FontSize="13"  HorizontalAlignment="Left" VerticalAlignment="Top" Margin="30,207,0,0" Height="25" Width="120"/>
+
+        <TextBox VerticalContentAlignment="Center" Text="{Binding Nagrada.Nagrada.NagradaId, UpdateSourceTrigger=PropertyChanged}" IsReadOnly="{Binding DaLiJeIzmena}" HorizontalAlignment="Left" Height="25" Margin="124,63,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="170"/>
+        <TextBox VerticalContentAlignment="Center" Text="{Binding Nagrada.Nagrada.Naziv, UpdateSourceTrigger=PropertyChanged}" HorizontalAlignment="Left" Height="25" Margin="124,111,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="170"/>
+        <TextBox VerticalContentAlignment="Center" Text="{Binding Nagrada.Nagrada.NovcanaNagrada, UpdateSourceTrigger=PropertyChanged}" HorizontalAlignment="Left" Height="25" Margin="124,159,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="170"/>
+        <TextBox VerticalContentAlignment="Center" Text="{Binding Nagrada.Nagrada.Drzavna, UpdateSourceTrigger=PropertyChanged}" HorizontalAlignment="Left" Height="25" Margin="124,207,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="170"/>
+
+        <Button Content="Dodaj" FontSize="18"  HorizontalAlignment="Left" Height="35" Margin="30,258,0,0" VerticalAlignment="Top" Width="103" Command="{Binding AddCommand}" Background="#FFDDD6D6"/>
+        <Button Content="Odustani" FontSize="18" HorizontalAlignment="Left" Height="35" Margin="191,258,0,0" VerticalAlignment="Top" Width="103" Command="{Binding ExitCommand}" Background="#FFDDD6D6"/>
+
+        <Label Content="{Binding Nagrada.ValidationErrors[Id]}" Foreground="Red" FontSize="10" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="124,86,0,0" Height="23" Width="193"/>
+        <Label Content="{Binding Nagrada.ValidationErrors[Naziv]}" Foreground="Red" FontSize="10" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="124,134,0,0" Height="23" Width="193"/>
+        <Label Content="{Binding Nagrada.ValidationErrors[NovcanaNagrada]}" Foreground="Red" FontSize="10" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="124,182,0,0" Height="23" Width="193"/>
+        <Label Content="{Binding Nagrada.ValidationErrors[Drzavna]}" Foreground="Red" FontSize="10" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="124,230,0,0" Height="23" Width="193"/>
+        <Label Foreground="#FFE05555" Content="Nova nagrada" FontSize="24" HorizontalAlignment="Left" Height="48" Margin="50,10,-18,0" VerticalAlignment="Top" Width="310" RenderTransformOrigin="1.175,0.787" FontFamily="Lucida Calligraphy" FontWeight="Bold"/>
+
+    </Grid>
+</Window>
